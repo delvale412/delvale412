@@ -22,7 +22,7 @@ export default function OpengraphImage() {
       >
         <span
           style={{
-            color: "#34e0b0",
+            color: "#a78bfa",
             fontSize: 22,
             letterSpacing: 4,
             textTransform: "uppercase",

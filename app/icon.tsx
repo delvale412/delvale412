@@ -18,7 +18,7 @@ export default function Icon() {
           fontFamily: "sans-serif",
         }}
       >
-        <span style={{ color: "#34e0b0", fontSize: 19, fontWeight: 700 }}>M</span>
+        <span style={{ color: "#a78bfa", fontSize: 19, fontWeight: 700 }}>M</span>
       </div>
     ),
     { ...size },

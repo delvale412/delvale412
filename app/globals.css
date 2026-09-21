@@ -9,9 +9,9 @@
   --color-paper: #f4f5f3;
   --color-muted: #9aa0a6;
   --color-faint: #7c8288;
-  --color-accent: #34e0b0;
-  --color-accent-strong: #1fc79a;
-  --color-accent-soft: rgba(52, 224, 176, 0.12);
+  --color-accent: #a78bfa;
+  --color-accent-strong: #8b6cf6;
+  --color-accent-soft: rgba(167, 139, 250, 0.12);
 }
 
 @theme inline {

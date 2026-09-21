@@ -12,7 +12,7 @@ type BaseProps = {
 
 const variants = {
   primary:
-    "bg-accent text-ink hover:bg-accent-strong shadow-[0_0_0_1px_rgba(52,224,176,0.35)]",
+    "bg-accent text-ink hover:bg-accent-strong shadow-[0_0_0_1px_rgba(167,139,250,0.35)]",
   secondary:
     "border border-line-strong text-paper hover:border-accent/60 hover:text-accent",
   ghost: "text-paper hover:text-accent",
