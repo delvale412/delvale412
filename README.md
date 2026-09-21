@@ -7,7 +7,7 @@
 Desenvolvedor de Software e estudante de Engenharia de Software na Universidade de Brasília (UnB), com experiência profissional em desenvolvimento Full Stack, sistemas web, APIs, bancos de dados e infraestrutura.
 
 [![Portfólio](https://img.shields.io/badge/Portfólio-delvale412.vercel.app-34e0b0?style=for-the-badge)](https://delvale412.vercel.app)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/SEU-LINKEDIN-AQUI)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheus-do-vale-lameira/)
 [![E-mail](https://img.shields.io/badge/E--mail-mvlameira%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mvlameira@gmail.com)
 
 </div>
