@@ -1,7 +1,7 @@
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 
-const pillars = ["Software Engineering", "Full Stack", "Design", "IA", "Automação"];
+const pillars = ["Engenharia", "Desenvolvimento", "Design", "IA", "Automação"];
 
 export function Differential() {
   return (
@@ -26,8 +26,8 @@ export function Differential() {
             ))}
           </div>
           <p className="max-w-lg text-balance text-sm text-faint sm:text-base">
-            Não me limito a uma única camada do desenvolvimento — transito entre elas para
-            conectar um produto do início ao fim.
+            Não dependo de outras pessoas pra tirar um projeto do papel — eu mesmo cuido de cada
+            parte, do início ao fim.
           </p>
         </Reveal>
       </Container>

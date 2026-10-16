@@ -9,9 +9,9 @@ export function Experience() {
     <section id="experiencia" className="border-t border-line py-24 sm:py-32">
       <Container>
         <SectionHeading
-          eyebrow="Trajetória"
+          eyebrow="Credibilidade"
           title="Experiência"
-          subtitle="Atuação profissional como desenvolvedor, em paralelo à formação em Engenharia de Software."
+          subtitle="Não é só portfólio — é experiência real desenvolvendo sistemas em instituições como a ANVISA e a Polícia Federal."
         />
 
         <div className="mt-14 flex flex-col gap-6">

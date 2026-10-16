@@ -11,9 +11,9 @@ export function ProjectsShowcase() {
     <section id="projetos" className="py-24 sm:py-32">
       <Container>
         <SectionHeading
-          eyebrow="Trabalho"
-          title="Projetos selecionados"
-          subtitle="Soluções, interfaces e experiências digitais que desenvolvi."
+          eyebrow="Projetos reais"
+          title="Do problema à solução no ar"
+          subtitle="Alguns projetos que mostram como eu transformo uma necessidade em algo funcionando de verdade."
         />
 
         <div className="mt-14 flex flex-col gap-6">

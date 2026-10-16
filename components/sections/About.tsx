@@ -5,23 +5,23 @@ import { Reveal } from "../ui/Reveal";
 const traits = [
   {
     number: "01",
-    title: "Perfil analítico",
-    description: "Entender o problema e os dados envolvidos antes de escrever a primeira linha de código.",
+    title: "Resolve o problema certo",
+    description: "Entendo o que você realmente precisa antes de pensar em qualquer tecnologia.",
   },
   {
     number: "02",
-    title: "Aprendizado contínuo",
-    description: "Facilidade para transitar entre linguagens, ferramentas e camadas diferentes de um sistema.",
+    title: "Aprende rápido",
+    description: "Facilidade para me adaptar a diferentes ferramentas, desafios e formas de trabalhar.",
   },
   {
     number: "03",
-    title: "Full Stack",
-    description: "Conforto em circular entre front-end, back-end, banco de dados e infraestrutura.",
+    title: "Cuida do projeto inteiro",
+    description: "Da tela que o usuário vê até o que roda por trás — sem precisar contratar várias pessoas.",
   },
   {
     number: "04",
-    title: "Da ideia ao deploy",
-    description: "Interesse em acompanhar a solução do requisito até ela estar rodando em produção.",
+    title: "Entrega o que funciona",
+    description: "Acompanho tudo até o site ou sistema estar pronto, no ar e funcionando de verdade.",
   },
 ];
 
@@ -34,22 +34,21 @@ export function About() {
         <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <Reveal delay={80} className="flex flex-col gap-6 text-balance text-base leading-relaxed text-muted sm:text-lg">
             <p>
-              Sou estudante de Engenharia de Software na Universidade de Brasília e atuo
-              profissionalmente como desenvolvedor desde 2024, passando por dois ambientes
-              distintos de tecnologia: a Polícia Federal e, atualmente, a ANVISA.
+              Antes de escrever qualquer linha de código, eu procuro entender o problema: o que
+              você precisa resolver, quem vai usar a solução e o que realmente faz diferença pro
+              seu negócio ou projeto.
             </p>
             <p>
-              Nesse período trabalhei em diferentes camadas de um sistema — do levantamento de
-              requisitos e da modelagem de dados ao desenvolvimento Front-end, Back-end e à
-              infraestrutura que sustenta essas aplicações em produção, com Docker, Kubernetes e
-              tecnologias do ecossistema Oracle.
+              A partir daí, cuido de cada etapa — da ideia ao produto no ar: a forma como ele é
+              construído por trás, a experiência de quem vai usar no dia a dia, e os detalhes
+              técnicos que garantem que tudo funcione bem, de forma estável e sem dor de cabeça
+              pra você.
             </p>
             <p>
-              Gosto de entender o problema antes do código: como os dados se conectam, como um
-              requisito vira arquitetura e como uma solução se comporta quando sai da tela e passa
-              a fazer parte da rotina de quem vai usá-la. É esse raciocínio — analítico antes de
-              técnico — que aplico tanto no trabalho quanto nos projetos que desenvolvo por conta
-              própria.
+              Desde 2024 aplico esse mesmo cuidado em ambientes exigentes de verdade — desenvolvendo
+              sistemas para instituições como a Polícia Federal e, atualmente, a ANVISA — e trago
+              essa experiência prática para cada projeto que desenvolvo, seja um site simples ou um
+              sistema sob medida.
             </p>
           </Reveal>
 

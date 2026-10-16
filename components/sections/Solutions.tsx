@@ -8,9 +8,9 @@ export function Solutions() {
     <section id="o-que-faco" className="border-t border-line py-24 sm:py-32">
       <Container>
         <SectionHeading
-          eyebrow="Capacidades"
-          title="O que posso construir"
-          subtitle="Entre as soluções que desenvolvo e exploro estão:"
+          eyebrow="Como posso ajudar"
+          title="O que posso construir pra você"
+          subtitle="Independente do tamanho do projeto, cuido de tudo que ele precisa pra funcionar bem."
         />
 
         <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">

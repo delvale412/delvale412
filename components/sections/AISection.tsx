@@ -9,9 +9,9 @@ export function AISection() {
     <section id="ia-design" className="border-t border-line py-24 sm:py-32">
       <Container>
         <SectionHeading
-          eyebrow="Exploração"
+          eyebrow="Diferencial"
           title="Software + Inteligência Artificial"
-          subtitle="Tecnologias e abordagens que exploro e utilizo em projetos — não certificações, e sim uma frente de estudo e experimentação contínua."
+          subtitle="Na prática: uso IA pra automatizar tarefas repetitivas, criar assistentes dentro do seu site ou sistema, e acelerar o desenvolvimento do seu projeto."
         />
 
         <Reveal delay={100} className="mt-10 flex flex-wrap gap-2.5">
@@ -36,8 +36,8 @@ export function AISection() {
               Código também começa no design.
             </h3>
             <p className="mt-4 max-w-md text-balance text-sm leading-relaxed text-muted sm:text-base">
-              Antes de implementar, penso na experiência: como a interface se comporta, como o
-              usuário se move por ela e como cada decisão visual sustenta o produto.
+              Antes de começar a construir, penso na experiência: como a interface se comporta,
+              como a pessoa se move por ela e como cada decisão visual facilita o uso.
             </p>
           </Reveal>
 

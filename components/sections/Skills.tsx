@@ -7,7 +7,11 @@ export function Skills() {
   return (
     <section id="skills" className="border-t border-line py-24 sm:py-32">
       <Container>
-        <SectionHeading eyebrow="Stack" title="Tecnologias" />
+        <SectionHeading
+          eyebrow="Por trás do projeto"
+          title="Tecnologias"
+          subtitle="Pra quem quiser entender o que sustenta cada site ou sistema que eu construo."
+        />
 
         <div className="mt-14 grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2">
           {skills.map((group, i) => (

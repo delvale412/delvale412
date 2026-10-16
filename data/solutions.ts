@@ -6,34 +6,34 @@ export type Solution = {
 export const solutions: Solution[] = [
   {
     title: "Websites",
-    description: "Experiências digitais e sites profissionais.",
+    description: "Sites profissionais que passam confiança e representam bem sua marca.",
   },
   {
     title: "Landing Pages",
-    description: "Páginas focadas em apresentação, experiência e conversão.",
+    description: "Páginas pensadas pra apresentar, convencer e converter visitantes em contato.",
   },
   {
-    title: "Aplicações Web",
-    description: "Aplicações e sistemas digitais.",
+    title: "Sistemas sob medida",
+    description: "Aplicações feitas pra resolver uma necessidade específica do seu negócio.",
   },
   {
-    title: "Full Stack",
-    description: "Frontend, backend, APIs e banco de dados.",
+    title: "Projeto do início ao fim",
+    description: "Interface, sistema e banco de dados funcionando juntos — sem contratar várias pessoas.",
   },
   {
-    title: "APIs",
-    description: "Serviços, integrações e comunicação entre sistemas.",
+    title: "Integrações",
+    description: "Conectar seu site ou sistema a outras ferramentas que você já usa.",
   },
   {
     title: "Automação",
-    description: "Ferramentas e processos automatizados.",
+    description: "Tarefas repetitivas resolvidas automaticamente, economizando seu tempo.",
   },
   {
     title: "Inteligência Artificial",
-    description: "Integração de IA, modelos, agentes e automações.",
+    description: "IA aplicada a problemas reais: atendimento, automação e novas funcionalidades.",
   },
   {
-    title: "UI / UX",
-    description: "Interfaces, protótipos e experiências digitais.",
+    title: "Design de Interface",
+    description: "Telas bonitas e fáceis de usar, pensadas pra quem vai usar de verdade.",
   },
 ];

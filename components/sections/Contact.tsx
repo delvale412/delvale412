@@ -1,6 +1,6 @@
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
-import { GitHubIcon, LinkedInIcon, MailIcon, ArrowUpRightIcon, DownloadIcon } from "../ui/icons";
+import { GitHubIcon, LinkedInIcon, MailIcon, DownloadIcon, WhatsAppIcon } from "../ui/icons";
 import { social } from "@/data/social";
 
 export function Contact() {
@@ -28,18 +28,21 @@ export function Contact() {
 
         <Reveal delay={160}>
           <p className="mt-5 max-w-md text-balance text-base text-muted sm:text-lg">
-            Vamos transformar uma ideia em algo real.
+            Me conta o que você precisa e vamos ver, sem compromisso, como transformar isso em
+            algo real.
           </p>
         </Reveal>
 
         <Reveal delay={240}>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <a
-              href={`mailto:${social.email}`}
+              href={social.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-ink transition-colors duration-300 hover:bg-accent-strong"
             >
-              Entrar em contato
-              <ArrowUpRightIcon />
+              <WhatsAppIcon className="h-4 w-4" />
+              Falar no WhatsApp
             </a>
             <a
               href={social.resumeUrl}
@@ -54,6 +57,15 @@ export function Contact() {
 
         <Reveal delay={320}>
           <div className="mt-14 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+            <a
+              href={social.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-muted transition-colors duration-200 hover:text-accent"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+              {social.whatsappDisplay}
+            </a>
             <a
               href={`mailto:${social.email}`}
               className="flex items-center gap-2 text-sm text-muted transition-colors duration-200 hover:text-accent"

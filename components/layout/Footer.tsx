@@ -1,5 +1,5 @@
 import { Container } from "../ui/Container";
-import { GitHubIcon, LinkedInIcon, MailIcon } from "../ui/icons";
+import { GitHubIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from "../ui/icons";
 import { social } from "@/data/social";
 
 export function Footer() {
@@ -15,6 +15,15 @@ export function Footer() {
         </div>
 
         <div className="flex items-center gap-5">
+          <a
+            href={social.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="text-muted transition-colors duration-200 hover:text-accent"
+          >
+            <WhatsAppIcon />
+          </a>
           <a
             href={social.github}
             target="_blank"

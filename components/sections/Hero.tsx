@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Reveal } from "../ui/Reveal";
 import { Button } from "../ui/Button";
-import { GitHubIcon, LinkedInIcon, MailIcon, MapPinIcon } from "../ui/icons";
+import { GitHubIcon, LinkedInIcon, MailIcon, MapPinIcon, WhatsAppIcon } from "../ui/icons";
 import { social } from "@/data/social";
 
 export function Hero() {
@@ -33,9 +33,8 @@ export function Hero() {
 
             <Reveal delay={160}>
               <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted sm:text-lg">
-                Desenvolvedor de Software e estudante de Engenharia de Software na UnB, com
-                experiência em desenvolvimento Full Stack, sistemas web, APIs, bancos de dados e
-                infraestrutura.
+                Crio sites, sistemas e aplicações sob medida — cuidando de cada parte do processo,
+                da primeira ideia ao produto pronto e no ar.
               </p>
             </Reveal>
 
@@ -44,8 +43,8 @@ export function Hero() {
                 <Button href="#projetos" variant="primary">
                   Ver projetos
                 </Button>
-                <Button href="#contato" variant="secondary">
-                  Entrar em contato
+                <Button href={social.whatsapp} variant="secondary" external icon={<WhatsAppIcon className="h-4 w-4" />}>
+                  Falar no WhatsApp
                 </Button>
               </div>
             </Reveal>
@@ -57,6 +56,15 @@ export function Hero() {
                   {social.location}
                 </div>
                 <div className="flex items-center gap-4">
+                  <a
+                    href={social.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                    className="text-muted transition-colors duration-200 hover:text-accent"
+                  >
+                    <WhatsAppIcon />
+                  </a>
                   <a
                     href={social.github}
                     target="_blank"

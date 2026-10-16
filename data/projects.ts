@@ -19,16 +19,16 @@ export const projects: Project[] = [
   {
     slug: "ironbase",
     title: "IronBase",
-    category: "Site institucional multi-página",
+    category: "Site institucional completo",
     featured: true,
     problem:
-      "Apresentar a metodologia de um consultor de alta performance física e converter visitas em contato qualificado.",
+      "Apresentar a metodologia de um consultor de alta performance física e transformar visitas em contatos interessados.",
     build: [
-      "Site multi-página (Home, Minha História, O Método, Resultados, Planos, Consultoria) com header fixo e navegação por rotas",
-      "Hero em tela cheia com identidade visual dark & gold",
-      "Calculadora de IMC interativa, com classificação automática do resultado",
-      "Geração automática de mensagem pré-formatada para contato via WhatsApp a partir dos dados calculados",
-      "Botão flutuante de WhatsApp e CTAs de conversão em todas as páginas",
+      "Site completo com várias páginas conectadas (Home, Minha História, O Método, Resultados, Planos, Consultoria), fácil de navegar",
+      "Visual de alto impacto, com identidade escura e dourada",
+      "Calculadora de IMC interativa, que já mostra o resultado na hora",
+      "A calculadora gera automaticamente uma mensagem pronta pra enviar no WhatsApp",
+      "Botão de WhatsApp sempre visível e chamadas para contato em todas as páginas",
     ],
     tech: ["HTML5", "CSS3", "JavaScript", "Font Awesome", "Google Fonts", "Integração com WhatsApp"],
     liveUrl: "https://ironbase-two.vercel.app/",
@@ -38,20 +38,20 @@ export const projects: Project[] = [
       mobile: "/projects/ironbase-mobile.webp",
     },
     demonstrates:
-      "Estruturação de um site multi-página do zero, lógica de interatividade em JavaScript puro e foco em conversão.",
+      "Capacidade de montar um site completo do zero, criar interações sob medida e manter o foco em gerar contatos reais.",
   },
   {
     slug: "swiss-gourmert",
     title: "Swiss Gourmert",
-    category: "Aplicação web com backend Python",
+    category: "Site de restaurante com sistema próprio",
     featured: false,
     problem:
-      "Apresentar a proposta, o cardápio e a localização de um restaurante, com uma aplicação servida por um backend real em vez de páginas estáticas.",
+      "Apresentar o cardápio, a história e a localização de um restaurante, com um site rápido e fácil de manter atualizado.",
     build: [
-      "Backend em FastAPI servindo páginas via templates Jinja2 (Início, Cardápio, História, Mídia & Eventos, Localização)",
-      "Navegação responsiva com menu hamburguer para mobile",
-      "Seções split-image para contar a história e os diferenciais do restaurante",
-      "Deploy como função serverless na Vercel",
+      "Site com várias páginas (Início, Cardápio, História, Mídia & Eventos, Localização), geradas por um sistema próprio nos bastidores",
+      "Menu responsivo, adaptado pro celular",
+      "Seções visuais contando a história e os diferenciais do restaurante",
+      "No ar, hospedado na Vercel",
     ],
     tech: ["Python", "FastAPI", "Jinja2", "HTML", "CSS", "JavaScript", "Vercel (serverless)"],
     liveUrl: "https://swiss-gourmert.vercel.app/",
@@ -61,7 +61,7 @@ export const projects: Project[] = [
       mobile: "/projects/swiss-gourmert-mobile.webp",
     },
     demonstrates:
-      "Construção de uma aplicação com backend Python real, estruturação de rotas e templates, e deploy serverless.",
+      "Capacidade de construir um site com sistema próprio por trás (não só páginas prontas) — o que facilita atualizações e crescimento no futuro.",
   },
   {
     slug: "landingpage",
@@ -69,14 +69,14 @@ export const projects: Project[] = [
     category: "Landing page institucional",
     featured: false,
     problem:
-      "Construir, como peça de portfólio, uma landing page completa para um escritório de advocacia (conteúdo fictício), cobrindo apresentação, prova social e conversão.",
+      "Criar uma landing page completa pra um escritório de advocacia (conteúdo fictício, projeto de portfólio), cobrindo apresentação, prova social e conversão de quem visita.",
     build: [
-      "Header fixo com menu responsivo (painel lateral no mobile)",
-      "Hero com ilustração SVG própria e badges de confiança",
-      "Contador animado de estatísticas e abas interativas de áreas de atuação",
-      "Carrossel de depoimentos com autoplay e FAQ em acordeão",
-      "Mapa do Google Maps incorporado e formulário que redireciona para o WhatsApp",
-      "Animações de entrada ao rolar a página (scroll reveal)",
+      "Menu fixo que se adapta ao celular, virando um painel lateral",
+      "Primeira tela de impacto, com ilustração própria e selos de confiança",
+      "Números animados e abas organizando as áreas de atuação",
+      "Depoimentos em carrossel automático e perguntas frequentes",
+      "Mapa incorporado e formulário que leva direto pro WhatsApp",
+      "Animações suaves conforme a pessoa rola a página",
     ],
     tech: ["HTML5", "CSS3", "JavaScript", "SVG"],
     liveUrl: "https://landingpage-mu-pink-35.vercel.app/",
@@ -86,6 +86,6 @@ export const projects: Project[] = [
       mobile: "/projects/landingpage-mobile.webp",
     },
     demonstrates:
-      "Construção de interfaces ricas em interatividade sem frameworks, com atenção a UX, microinterações e ilustração própria.",
+      "Capacidade de criar interfaces ricas em interação sem depender de ferramentas prontas, com atenção aos detalhes de uso e uma ilustração própria.",
   },
 ];
