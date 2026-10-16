@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import { Reveal } from "../ui/Reveal";
 import { Button } from "../ui/Button";
 import { GitHubIcon, LinkedInIcon, MailIcon, MapPinIcon, WhatsAppIcon } from "../ui/icons";
 import { social } from "@/data/social";
+import { trackEvent } from "@/lib/analytics";
 
 export function Hero() {
   return (
@@ -40,11 +43,15 @@ export function Hero() {
 
             <Reveal delay={240}>
               <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Button href="#projetos" variant="primary">
-                  Ver projetos
+                <Button
+                  href="/orcamento"
+                  variant="primary"
+                  onClick={() => trackEvent("cta_orcamento_click", { from: "hero" })}
+                >
+                  Solicitar orçamento
                 </Button>
-                <Button href={social.whatsapp} variant="secondary" external icon={<WhatsAppIcon className="h-4 w-4" />}>
-                  Falar no WhatsApp
+                <Button href="/projetos" variant="secondary">
+                  Conhecer projetos
                 </Button>
               </div>
             </Reveal>
@@ -61,6 +68,7 @@ export function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
+                    onClick={() => trackEvent("cta_whatsapp_click", { from: "hero_social" })}
                     className="text-muted transition-colors duration-200 hover:text-accent"
                   >
                     <WhatsAppIcon />

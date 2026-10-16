@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -8,6 +10,7 @@ type BaseProps = {
   className?: string;
   external?: boolean;
   icon?: ReactNode;
+  onClick?: () => void;
 };
 
 const variants = {
@@ -18,12 +21,12 @@ const variants = {
   ghost: "text-paper hover:text-accent",
 };
 
-export function Button({ href, children, variant = "primary", className = "", external, icon }: BaseProps) {
+export function Button({ href, children, variant = "primary", className = "", external, icon, onClick }: BaseProps) {
   const classes = `group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-colors duration-300 ${variants[variant]} ${className}`;
 
   if (external) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={classes} onClick={onClick}>
         {children}
         {icon}
       </a>
@@ -31,7 +34,7 @@ export function Button({ href, children, variant = "primary", className = "", ex
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} className={classes} onClick={onClick}>
       {children}
       {icon}
     </Link>

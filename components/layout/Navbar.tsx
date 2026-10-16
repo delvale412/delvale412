@@ -2,21 +2,21 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Container } from "../ui/Container";
 import { MenuIcon, CloseIcon } from "../ui/icons";
-import { social } from "@/data/social";
+import { trackEvent } from "@/lib/analytics";
 
 const links = [
-  { href: "#hero", label: "Home" },
-  { href: "#sobre", label: "Sobre" },
-  { href: "#experiencia", label: "Experiência" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projetos", label: "Projetos" },
-  { href: "#processo", label: "Processo" },
-  { href: "#contato", label: "Contato" },
+  { href: "/", label: "Home" },
+  { href: "/projetos", label: "Projetos" },
+  { href: "/servicos", label: "Serviços" },
+  { href: "/sobre", label: "Sobre" },
+  { href: "/contato", label: "Contato" },
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -34,6 +34,8 @@ export function Navbar() {
     };
   }, [open]);
 
+  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
@@ -41,29 +43,32 @@ export function Navbar() {
       }`}
     >
       <Container className="flex h-16 items-center justify-between sm:h-20">
-        <Link href="#hero" className="font-display text-lg font-semibold tracking-tight text-paper">
+        <Link href="/" className="font-display text-lg font-semibold tracking-tight text-paper">
           Matheus<span className="text-accent">.</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-muted transition-colors duration-200 hover:text-paper"
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={`text-sm transition-colors duration-200 hover:text-paper ${
+                isActive(link.href) ? "text-paper" : "text-muted"
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a
-          href={social.resumeUrl}
-          download
-          className="hidden rounded-full border border-line-strong px-5 py-2 text-sm font-medium text-paper transition-colors duration-200 hover:border-accent/60 hover:text-accent md:inline-flex"
+        <Link
+          href="/orcamento"
+          onClick={() => trackEvent("cta_orcamento_click", { from: "navbar" })}
+          className="hidden rounded-full bg-accent px-5 py-2 text-sm font-medium text-ink transition-colors duration-300 hover:bg-accent-strong md:inline-flex"
         >
-          Currículo
-        </a>
+          Solicitar orçamento
+        </Link>
 
         <button
           type="button"
@@ -80,23 +85,27 @@ export function Navbar() {
         <div className="border-t border-line bg-ink px-6 py-6 md:hidden">
           <nav className="flex flex-col gap-1">
             {links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base text-paper transition-colors duration-200 hover:bg-ink-soft hover:text-accent"
+                className={`rounded-lg px-3 py-3 text-base transition-colors duration-200 hover:bg-ink-soft hover:text-accent ${
+                  isActive(link.href) ? "text-accent" : "text-paper"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href={social.resumeUrl}
-              download
-              onClick={() => setOpen(false)}
-              className="mt-2 rounded-lg border border-line-strong px-3 py-3 text-center text-base text-paper"
+            <Link
+              href="/orcamento"
+              onClick={() => {
+                trackEvent("cta_orcamento_click", { from: "navbar_mobile" });
+                setOpen(false);
+              }}
+              className="mt-2 rounded-lg bg-accent px-3 py-3 text-center text-base font-medium text-ink"
             >
-              Baixar currículo
-            </a>
+              Solicitar orçamento
+            </Link>
           </nav>
         </div>
       ) : null}

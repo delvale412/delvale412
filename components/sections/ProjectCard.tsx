@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal } from "../ui/Reveal";
 import { Tag } from "../ui/Tag";
 import { ArrowUpRightIcon, GitHubIcon } from "../ui/icons";
@@ -61,6 +62,12 @@ export function FeaturedProjectCard({ project }: { project: Project }) {
                 Ver projeto
                 <ArrowUpRightIcon />
               </a>
+              <Link
+                href={`/projetos/${project.slug}`}
+                className="inline-flex items-center gap-2 rounded-full border border-line-strong px-5 py-2.5 text-sm font-medium text-paper transition-colors duration-300 hover:border-accent/60 hover:text-accent"
+              >
+                Ver estudo de caso
+              </Link>
               {project.githubUrl ? (
                 <a
                   href={project.githubUrl}
@@ -113,7 +120,7 @@ export function ProjectCard({ project, delay = 0 }: { project: Project; delay?: 
             ))}
           </div>
 
-          <div className="flex items-center gap-4 pt-1">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1">
             <a
               href={project.liveUrl}
               target="_blank"
@@ -123,6 +130,12 @@ export function ProjectCard({ project, delay = 0 }: { project: Project; delay?: 
               Ver projeto
               <ArrowUpRightIcon className="h-3.5 w-3.5" />
             </a>
+            <Link
+              href={`/projetos/${project.slug}`}
+              className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors duration-200 hover:text-accent"
+            >
+              Estudo de caso
+            </Link>
             {project.githubUrl ? (
               <a
                 href={project.githubUrl}

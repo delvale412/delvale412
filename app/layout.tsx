@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { social } from "@/data/social";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -23,40 +25,39 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
-const siteUrl = "https://delvale412.vercel.app";
-
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Matheus do Vale | Software Developer",
+    default: "Matheus do Vale | Desenvolvimento de Software sob Medida",
     template: "%s | Matheus do Vale",
   },
   description:
-    "Matheus do Vale — Desenvolvedor de Software, Full Stack e estudante de Engenharia de Software na Universidade de Brasília.",
+    "Desenvolvimento de software e experiências digitais sob medida — sites, landing pages, sistemas web e aplicações, por um desenvolvedor Full Stack com experiência profissional real.",
   keywords: [
     "Matheus do Vale",
-    "Software Developer",
     "Desenvolvedor Full Stack",
+    "Desenvolvimento de sites",
+    "Desenvolvimento de sistemas web",
     "Engenharia de Software",
-    "UnB",
     "Brasília",
   ],
   authors: [{ name: social.name }],
   creator: social.name,
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "pt_BR",
     url: siteUrl,
-    title: "Matheus do Vale | Software Developer",
+    title: "Matheus do Vale | Desenvolvimento de Software sob Medida",
     description:
-      "Desenvolvedor de Software, Full Stack e estudante de Engenharia de Software na Universidade de Brasília.",
+      "Sites, landing pages, sistemas web e aplicações sob medida — da ideia ao produto no ar.",
     siteName: "Matheus do Vale",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Matheus do Vale | Software Developer",
+    title: "Matheus do Vale | Desenvolvimento de Software sob Medida",
     description:
-      "Desenvolvedor de Software, Full Stack e estudante de Engenharia de Software na Universidade de Brasília.",
+      "Sites, landing pages, sistemas web e aplicações sob medida — da ideia ao produto no ar.",
   },
 };
 
@@ -91,6 +92,21 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {process.env.NEXT_PUBLIC_GA_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+                window.gtag = gtag;`}
+            </Script>
+          </>
+        ) : null}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-accent focus:px-5 focus:py-2.5 focus:text-sm focus:font-medium focus:text-ink"
