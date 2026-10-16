@@ -7,7 +7,10 @@ import type { Project } from "@/data/projects";
 export function FeaturedProjectCard({ project }: { project: Project }) {
   return (
     <Reveal>
-      <article className="group overflow-hidden rounded-3xl border border-line bg-ink-soft">
+      <article
+        id={`projeto-${project.slug}`}
+        className="group scroll-mt-28 overflow-hidden rounded-3xl border border-line bg-ink-soft"
+      >
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="relative aspect-16/11 lg:aspect-auto">
             <Image
@@ -80,7 +83,10 @@ export function FeaturedProjectCard({ project }: { project: Project }) {
 export function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number }) {
   return (
     <Reveal delay={delay} className="h-full">
-      <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-ink-soft">
+      <article
+        id={`projeto-${project.slug}`}
+        className="group flex h-full scroll-mt-28 flex-col overflow-hidden rounded-3xl border border-line bg-ink-soft"
+      >
         <div className="relative aspect-16/10">
           <Image
             src={project.image.desktop}
