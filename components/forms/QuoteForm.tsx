@@ -39,7 +39,7 @@ export function QuoteForm({ initialType }: Props) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
 
-    // Honeypot — bots tend to fill every field, humans never see this one.
+    // Honeypot: bots tend to fill every field, humans never see this one.
     if (form.get("website")) {
       setSent(true);
       return;
@@ -186,7 +186,7 @@ export function QuoteForm({ initialType }: Props) {
       </button>
 
       <p className="text-xs leading-relaxed text-faint">
-        Ao enviar, abrimos o WhatsApp com sua mensagem já pronta — não guardamos esses dados em
+        Ao enviar, abrimos o WhatsApp com sua mensagem já pronta. Não guardamos esses dados em
         nenhum servidor.
       </p>
     </form>

@@ -30,7 +30,7 @@ export const services: Service[] = [
         text: "Um lançamento, uma campanha de anúncios ou uma nova oferta que precisa de uma página só dela, direta, sem distrações, levando quem chegou até o botão de contato.",
       },
       {
-        text: "Um profissional que é bem indicado de boca a boca, mas, quando alguém pesquisa o nome dele, só encontra redes sociais desatualizadas — nada que passe segurança antes do primeiro contato.",
+        text: "Um profissional que é bem indicado de boca a boca, mas, quando alguém pesquisa o nome dele, só encontra redes sociais desatualizadas, nada que passe segurança antes do primeiro contato.",
         proof: { label: "Veja o projeto Landing Page", href: "/projetos/landingpage" },
       },
     ],
@@ -55,7 +55,7 @@ export const services: Service[] = [
         proof: { label: "Veja o projeto Swiss Gourmert", href: "/projetos/swiss-gourmert" },
       },
       {
-        text: "Um consultor com um método próprio recebe sempre as mesmas perguntas antes de fechar negócio — e se beneficia de uma ferramenta simples (uma calculadora, um teste) que já qualifica quem chega.",
+        text: "Um consultor com um método próprio recebe sempre as mesmas perguntas antes de fechar negócio, e se beneficia de uma ferramenta simples (uma calculadora, um teste) que já qualifica quem chega.",
         proof: { label: "Veja o projeto IronBase", href: "/projetos/ironbase" },
       },
     ],
@@ -76,7 +76,7 @@ export const services: Service[] = [
     notIncluded: ["Funcionalidades fora do escopo combinado", "Suporte 24/7", "Infraestrutura de servidor própria (quando não prevista)"],
     scenarios: [
       {
-        text: "É comum um negócio crescer até o ponto em que pedidos, cadastros ou tarefas ficam espalhados em várias planilhas soltas — e passar a precisar de um sistema simples que organize tudo num só lugar, sob medida pra forma como o negócio realmente funciona.",
+        text: "É comum um negócio crescer até o ponto em que pedidos, cadastros ou tarefas ficam espalhados em várias planilhas soltas, e passar a precisar de um sistema simples que organize tudo num só lugar, sob medida pra forma como o negócio realmente funciona.",
         proof: { label: "Veja minha experiência profissional", href: "/sobre#experiencia" },
       },
     ],
@@ -115,7 +115,7 @@ export const services: Service[] = [
     notIncluded: ["Desenvolvimento de novas funcionalidades grandes (tratado como projeto à parte)", "Suporte fora do horário combinado"],
     scenarios: [
       {
-        text: "É comum um site ficar esquecido depois de pronto — sem atualização, sem backup — até que algo para de funcionar bem na hora que mais importa.",
+        text: "É comum um site ficar esquecido depois de pronto, sem atualização, sem backup, até que algo para de funcionar bem na hora que mais importa.",
       },
     ],
   },

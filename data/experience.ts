@@ -13,15 +13,15 @@ export type ExperienceEntry = {
 export const experience: ExperienceEntry[] = [
   {
     id: "anvisa",
-    company: "ANVISA — Agência Nacional de Vigilância Sanitária",
+    company: "ANVISA (Agência Nacional de Vigilância Sanitária)",
     role: "Desenvolvedor de Software / Full Stack",
-    period: "Setembro de 2025 — Atual",
-    location: "Brasília — DF",
+    period: "Desde setembro de 2025",
+    location: "Brasília, DF",
     current: true,
     summary:
       "Desenvolvimento de sistemas de software do primeiro rascunho até o sistema pronto e em uso, participando de cada etapa do processo.",
     highlights: [
-      "Desenvolvimento completo de sistemas internos — da interface ao que roda por trás",
+      "Desenvolvimento completo de sistemas internos, da interface ao que roda por trás",
       "Conexão entre diferentes sistemas, pra tudo funcionar de forma integrada",
       "Organização e estruturação de bancos de dados",
       "Desenvolvimento de soluções com tecnologias Oracle",
@@ -34,8 +34,8 @@ export const experience: ExperienceEntry[] = [
     id: "policia-federal",
     company: "Polícia Federal",
     role: "Desenvolvimento de Sistemas / Full Stack",
-    period: "Março de 2024 — Setembro de 2025",
-    location: "Brasília — DF",
+    period: "Março de 2024 a setembro de 2025",
+    location: "Brasília, DF",
     current: false,
     summary:
       "Desenvolvimento de sistemas web para atender as mais diversas demandas internas, do entendimento da necessidade até a entrega final.",

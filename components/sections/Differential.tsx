@@ -26,7 +26,7 @@ export function Differential() {
             ))}
           </div>
           <p className="max-w-lg text-balance text-sm text-faint sm:text-base">
-            Não dependo de outras pessoas pra tirar um projeto do papel — eu mesmo cuido de cada
+            Não dependo de outras pessoas pra tirar um projeto do papel: eu mesmo cuido de cada
             parte, do início ao fim.
           </p>
         </Reveal>

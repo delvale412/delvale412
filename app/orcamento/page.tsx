@@ -7,7 +7,7 @@ import { QuoteForm } from "@/components/forms/QuoteForm";
 export const metadata: Metadata = {
   title: "Solicitar orçamento",
   description:
-    "Me conta o que você precisa — tipo de projeto, descrição, prazo e orçamento estimado — e eu te respondo pelo WhatsApp.",
+    "Me conta o que você precisa (tipo de projeto, descrição, prazo e orçamento estimado) e eu te respondo pelo WhatsApp.",
   alternates: { canonical: "/orcamento" },
 };
 

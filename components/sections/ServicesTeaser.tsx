@@ -12,7 +12,7 @@ export function ServicesTeaser() {
         <SectionHeading
           eyebrow="Como posso ajudar"
           title="Serviços de desenvolvimento"
-          subtitle="Do primeiro site institucional ao sistema sob medida — veja o que cabe no seu projeto."
+          subtitle="Do primeiro site institucional ao sistema sob medida: veja o que cabe no seu projeto."
         />
 
         <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

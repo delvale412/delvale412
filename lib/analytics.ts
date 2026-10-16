@@ -1,5 +1,5 @@
 // Lightweight, privacy-respecting event tracking.
-// No-op until NEXT_PUBLIC_GA_ID is configured — never sends anything, never
+// No-op until NEXT_PUBLIC_GA_ID is configured: never sends anything, never
 // invents an ID. See README for how to turn this on.
 
 type EventName =

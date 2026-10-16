@@ -61,7 +61,7 @@ export const projects: Project[] = [
       mobile: "/projects/swiss-gourmert-mobile.webp",
     },
     demonstrates:
-      "Capacidade de construir um site com sistema próprio por trás (não só páginas prontas) — o que facilita atualizações e crescimento no futuro.",
+      "Capacidade de construir um site com sistema próprio por trás (não só páginas prontas), o que facilita atualizações e crescimento no futuro.",
   },
   {
     slug: "landingpage",

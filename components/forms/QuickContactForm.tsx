@@ -106,7 +106,7 @@ export function QuickContactForm() {
       </button>
 
       <p className="text-xs leading-relaxed text-faint">
-        Ao enviar, abrimos o WhatsApp com sua mensagem já pronta — não guardamos esses dados em
+        Ao enviar, abrimos o WhatsApp com sua mensagem já pronta. Não guardamos esses dados em
         nenhum servidor.
       </p>
     </form>

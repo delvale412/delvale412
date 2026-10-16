@@ -36,7 +36,7 @@ export function Hero() {
 
             <Reveal delay={160}>
               <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted sm:text-lg">
-                Crio sites, sistemas e aplicações sob medida — cuidando de cada parte do processo,
+                Crio sites, sistemas e aplicações sob medida, cuidando de cada parte do processo,
                 da primeira ideia ao produto pronto e no ar.
               </p>
             </Reveal>
@@ -134,7 +134,7 @@ export function Hero() {
 
               <div className="absolute -bottom-5 left-5 rounded-xl border border-line-strong bg-ink-elevated px-4 py-3 shadow-xl shadow-black/40">
                 <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                  Brasília — DF
+                  Brasília, DF
                 </p>
                 <p className="mt-0.5 text-sm font-medium text-paper">Software Developer</p>
               </div>

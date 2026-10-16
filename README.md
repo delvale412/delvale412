@@ -6,7 +6,7 @@
 
 Desenvolvedor de Software e estudante de Engenharia de Software na Universidade de Brasília (UnB), com experiência profissional em desenvolvimento Full Stack, sistemas web, APIs, bancos de dados e infraestrutura.
 
-[![Portfólio](https://img.shields.io/badge/Portfólio-delvale412.vercel.app-a78bfa?style=for-the-badge)](https://delvale412.vercel.app)
+[![Portfólio](https://img.shields.io/badge/Portfólio-matheusdovalelameira.vercel.app-a78bfa?style=for-the-badge)](https://matheusdovalelameira.vercel.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheus-do-vale-lameira/)
 [![E-mail](https://img.shields.io/badge/E--mail-mvlameira%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mvlameira@gmail.com)
 
@@ -16,10 +16,10 @@ Desenvolvedor de Software e estudante de Engenharia de Software na Universidade 
 
 ### Sobre mim
 
-- 🎓 Cursando **Engenharia de Software** na **UnB** (8º semestre — previsão de conclusão em 2027)
+- 🎓 Cursando **Engenharia de Software** na **UnB** (8º semestre, previsão de conclusão em 2027)
 - 💼 Atualmente **Desenvolvedor de Software / Full Stack** na **ANVISA**
 - 🕒 Anteriormente, **Desenvolvimento de Sistemas / Full Stack** na **Polícia Federal**
-- 🧠 Perfil analítico, com interesse em transitar por diferentes camadas de um produto — do requisito à infraestrutura, passando por dados, design e IA
+- 🧠 Perfil analítico, com interesse em transitar por diferentes camadas de um produto: do requisito à infraestrutura, passando por dados, design e IA
 - 🌱 Explorando, atualmente, **LLMs, prompt engineering e sistemas multi-agente**
 
 ### Stack
@@ -39,17 +39,17 @@ Desenvolvedor de Software e estudante de Engenharia de Software na Universidade 
 
 | Projeto | Descrição | Link |
 | --- | --- | --- |
-| **IronBase** | Site institucional multi-página para uma consultoria de alta performance, com calculadora de IMC interativa e integração com WhatsApp | [ver projeto](https://ironbase-two.vercel.app/) |
+| **IronBase** | Site institucional completo para uma consultoria de alta performance, com calculadora de IMC interativa e integração com WhatsApp | [ver projeto](https://ironbase-two.vercel.app/) |
 | **Swiss Gourmert** | Aplicação web com backend em FastAPI + Jinja2 para um restaurante, com deploy serverless na Vercel | [ver projeto](https://swiss-gourmert.vercel.app/) · [código](https://github.com/delvale412/Swiss-Gourmert) |
 | **Landing Page** | Landing page institucional em HTML/CSS/JS puro, com carrossel, FAQ e animações de scroll | [ver projeto](https://landingpage-mu-pink-35.vercel.app/) · [código](https://github.com/delvale412/landingpage) |
 
-Veja todos os projetos, com contexto e capturas de tela, no [portfólio completo](https://delvale412.vercel.app).
+Veja todos os projetos, serviços e um formulário de orçamento no [site completo](https://matheusdovalelameira.vercel.app).
 
 ---
 
 ## Sobre este repositório
 
-`delvale412/delvale412` é o repositório especial do perfil do GitHub — e também o código-fonte do meu [portfólio pessoal](https://delvale412.vercel.app), construído com **Next.js (App Router)**, **TypeScript** e **Tailwind CSS**.
+`delvale412/delvale412` é o repositório especial do perfil do GitHub e também o código-fonte do meu [site profissional](https://matheusdovalelameira.vercel.app), construído com **Next.js (App Router)**, **TypeScript** e **Tailwind CSS**.
 
 ### Rodando localmente
 
@@ -64,15 +64,18 @@ Abra [http://localhost:3000](http://localhost:3000).
 
 ```
 app/               rotas, layout, metadata e SEO (App Router)
+  /, /projetos, /projetos/[slug], /servicos, /sobre, /orcamento, /contato
 components/
-  layout/          Navbar, Footer
+  layout/          Navbar, Footer, Breadcrumbs
   sections/        Hero, Projetos, Sobre, Experiência, Skills, IA, Processo...
-  ui/               primitivos reutilizáveis (botões, tags, reveal-on-scroll, ícones)
-data/              conteúdo do site (projetos, experiência, skills, formação, social)
+  forms/           formulário de orçamento e contato rápido (geram mensagem no WhatsApp, sem backend)
+  ui/              primitivos reutilizáveis (botões, tags, reveal-on-scroll, ícones)
+data/              conteúdo do site (projetos, serviços, experiência, skills, formação, social)
+lib/               analytics (no-op até configurar GA4) e constante de URL do site
 public/            imagens, capturas de projetos e currículo em PDF
 ```
 
-Novos projetos podem ser adicionados apenas incluindo uma entrada em `data/projects.ts` e a respectiva captura de tela em `public/projects/`, sem alterar a interface.
+Novos projetos podem ser adicionados incluindo uma entrada em `data/projects.ts` e a respectiva captura de tela em `public/projects/`, sem alterar a interface.
 
 ### Stack do site
 
@@ -82,6 +85,6 @@ Next.js · TypeScript · Tailwind CSS · deploy na Vercel
 
 <div align="center">
 
-**Matheus do Vale Lameira** — Brasília, DF
+**Matheus do Vale Lameira**, Brasília, DF
 
 </div>

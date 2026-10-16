@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | Matheus do Vale",
   },
   description:
-    "Desenvolvimento de software e experiências digitais sob medida — sites, landing pages, sistemas web e aplicações, por um desenvolvedor Full Stack com experiência profissional real.",
+    "Desenvolvimento de software e experiências digitais sob medida: sites, landing pages, sistemas web e aplicações, por um desenvolvedor Full Stack com experiência profissional real.",
   keywords: [
     "Matheus do Vale",
     "Desenvolvedor Full Stack",
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Matheus do Vale | Desenvolvimento de Software sob Medida",
     description:
-      "Sites, landing pages, sistemas web e aplicações sob medida — da ideia ao produto no ar.",
+      "Sites, landing pages, sistemas web e aplicações sob medida, da ideia ao produto no ar.",
     siteName: "Matheus do Vale",
   },
   twitter: {
     card: "summary_large_image",
     title: "Matheus do Vale | Desenvolvimento de Software sob Medida",
     description:
-      "Sites, landing pages, sistemas web e aplicações sob medida — da ideia ao produto no ar.",
+      "Sites, landing pages, sistemas web e aplicações sob medida, da ideia ao produto no ar.",
   },
 };
 

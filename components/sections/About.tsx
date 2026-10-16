@@ -16,7 +16,7 @@ const traits = [
   {
     number: "03",
     title: "Cuida do projeto inteiro",
-    description: "Da tela que o usuário vê até o que roda por trás — sem precisar contratar várias pessoas.",
+    description: "Da tela que o usuário vê até o que roda por trás, sem precisar contratar várias pessoas.",
   },
   {
     number: "04",
@@ -39,14 +39,14 @@ export function About() {
               seu negócio ou projeto.
             </p>
             <p>
-              A partir daí, cuido de cada etapa — da ideia ao produto no ar: a forma como ele é
+              A partir daí, cuido de cada etapa, da ideia ao produto no ar: a forma como ele é
               construído por trás, a experiência de quem vai usar no dia a dia, e os detalhes
               técnicos que garantem que tudo funcione bem, de forma estável e sem dor de cabeça
               pra você.
             </p>
             <p>
-              Desde 2024 aplico esse mesmo cuidado em ambientes exigentes de verdade — desenvolvendo
-              sistemas para instituições como a Polícia Federal e, atualmente, a ANVISA — e trago
+              Desde 2024 aplico esse mesmo cuidado em ambientes exigentes de verdade, desenvolvendo
+              sistemas para instituições como a Polícia Federal e, atualmente, a ANVISA, e trago
               essa experiência prática para cada projeto que desenvolvo, seja um site simples ou um
               sistema sob medida.
             </p>

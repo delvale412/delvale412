@@ -5,7 +5,7 @@ import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
 export const metadata: Metadata = {
   title: "Projetos",
   description:
-    "Projetos reais que desenvolvi: sites institucionais, aplicações web com backend próprio e landing pages — do problema à solução no ar.",
+    "Projetos reais que desenvolvi: sites institucionais, aplicações web com backend próprio e landing pages, do problema à solução no ar.",
   alternates: { canonical: "/projetos" },
 };
 

@@ -11,7 +11,7 @@ export function Experience() {
         <SectionHeading
           eyebrow="Credibilidade"
           title="Experiência"
-          subtitle="Não é só portfólio — é experiência real desenvolvendo sistemas em instituições como a ANVISA e a Polícia Federal."
+          subtitle="Não é só portfólio: é experiência real desenvolvendo sistemas em instituições como a ANVISA e a Polícia Federal."
         />
 
         <div className="mt-14 flex flex-col gap-6">
