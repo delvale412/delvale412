@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ParticleField } from "@/components/ui/ParticleField";
 import { social } from "@/data/social";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
@@ -113,6 +114,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Pular para o conteúdo
         </a>
+        <ParticleField variant="global" className="fixed inset-0 -z-10 h-full w-full" />
         <Navbar />
         <main id="main-content">{children}</main>
         <Footer />

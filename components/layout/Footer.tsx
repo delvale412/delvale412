@@ -15,7 +15,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-line bg-ink-soft">
+    <footer className="border-t border-line bg-ink-soft/80 backdrop-blur-sm">
       <Container className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-3">
         <div>
           <p className="font-display text-lg font-semibold text-paper">{social.shortName}</p>

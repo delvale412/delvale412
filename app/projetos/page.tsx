@@ -13,6 +13,7 @@ export default function ProjetosPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Projetos" }]} />
+      <h1 className="sr-only">Projetos</h1>
       <ProjectsShowcase />
     </>
   );

@@ -2,32 +2,26 @@ import Link from "next/link";
 import { Container } from "../ui/Container";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Reveal } from "../ui/Reveal";
-import { FeaturedProjectCard, ProjectCard } from "./ProjectCard";
+import { ProjectCard } from "./ProjectCard";
 import { ArrowUpRightIcon } from "../ui/icons";
 import { projects } from "@/data/projects";
 
 export function FeaturedProjectsTeaser() {
-  const featured = projects.find((p) => p.featured);
-  const second = projects.find((p) => !p.featured);
+  const others = projects.filter((p) => !p.featured).slice(0, 2);
 
   return (
     <section className="py-24 sm:py-32">
       <Container>
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeading
-            eyebrow="Projetos reais"
-            title="Do problema à solução no ar"
-            subtitle="Alguns projetos que mostram como eu transformo uma necessidade em algo funcionando de verdade."
-          />
-        </div>
+        <SectionHeading
+          eyebrow="Mais projetos"
+          title="Do problema à solução no ar"
+          subtitle="Cada projeto parte de uma necessidade real e termina em algo funcionando de verdade."
+        />
 
-        <div className="mt-14 flex flex-col gap-6">
-          {featured ? <FeaturedProjectCard project={featured} /> : null}
-          {second ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2">
-              <ProjectCard project={second} />
-            </div>
-          ) : null}
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {others.map((project, i) => (
+            <ProjectCard key={project.slug} project={project} delay={i * 80} />
+          ))}
         </div>
 
         <Reveal delay={120} className="mt-10">

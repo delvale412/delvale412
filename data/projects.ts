@@ -13,6 +13,7 @@ export type Project = {
     mobile: string;
   };
   demonstrates: string;
+  stats?: { value: string; label: string }[];
 };
 
 export const projects: Project[] = [
@@ -20,7 +21,7 @@ export const projects: Project[] = [
     slug: "ironbase",
     title: "IronBase",
     category: "Site institucional completo",
-    featured: true,
+    featured: false,
     problem:
       "Apresentar a metodologia de um consultor de alta performance física e transformar visitas em contatos interessados.",
     build: [
@@ -92,7 +93,7 @@ export const projects: Project[] = [
     slug: "falha-critica-3d",
     title: "Falha Crítica 3D",
     category: "Loja virtual de estúdio de impressão 3D",
-    featured: false,
+    featured: true,
     problem:
       "Dar a um estúdio de miniaturas e estatuetas em resina uma vitrine online completa, que mostra o catálogo e transforma cada visita em um pedido ou orçamento pelo WhatsApp.",
     build: [
@@ -112,5 +113,10 @@ export const projects: Project[] = [
     },
     demonstrates:
       "Capacidade de montar uma vitrine comercial completa para um negócio real, com identidade visual própria, filtros interativos e um caminho curto entre o interesse e o pedido.",
+    stats: [
+      { value: "4", label: "páginas conectadas" },
+      { value: "3", label: "filtros de catálogo" },
+      { value: "0", label: "cadastros exigidos" },
+    ],
   },
 ];
