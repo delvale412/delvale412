@@ -86,23 +86,59 @@
 }
 
 @layer utilities {
+  /* Spotlight theming: the section sets --sp-a (main) and --sp-b (secondary). */
   .spin-border {
     background: conic-gradient(
       from var(--angle),
-      rgba(251, 197, 49, 0.08) 0%,
-      rgba(251, 197, 49, 0.08) 50%,
-      #fbc531 78%,
-      #ef3b4c 92%,
-      rgba(251, 197, 49, 0.08) 100%
+      color-mix(in srgb, var(--sp-a) 8%, transparent) 0%,
+      color-mix(in srgb, var(--sp-a) 8%, transparent) 50%,
+      var(--sp-a) 78%,
+      var(--sp-b) 92%,
+      color-mix(in srgb, var(--sp-a) 8%, transparent) 100%
     );
   }
 
   .text-crit-gradient {
-    background-image: linear-gradient(100deg, #fbc531 0%, #fff0b8 38%, #ef3b4c 62%, #fbc531 100%);
+    background-image: linear-gradient(
+      100deg,
+      var(--sp-a) 0%,
+      color-mix(in srgb, var(--sp-a) 40%, white) 38%,
+      var(--sp-b) 62%,
+      var(--sp-a) 100%
+    );
     background-size: 220% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  .sp-text {
+    color: var(--sp-a);
+  }
+  .sp-bg {
+    background-color: var(--sp-a);
+  }
+  .sp-bg-b {
+    background-color: var(--sp-b);
+  }
+  .sp-pill {
+    border: 1px solid color-mix(in srgb, var(--sp-a) 30%, transparent);
+    background-color: color-mix(in srgb, var(--sp-a) 10%, transparent);
+  }
+  .sp-btn {
+    background-color: var(--sp-a);
+    box-shadow: 0 0 32px -4px color-mix(in srgb, var(--sp-a) 55%, transparent);
+  }
+  .sp-btn:hover {
+    background-color: color-mix(in srgb, var(--sp-a) 80%, white);
+    box-shadow: 0 0 44px -2px color-mix(in srgb, var(--sp-a) 75%, transparent);
+  }
+  .sp-ghost:hover {
+    border-color: color-mix(in srgb, var(--sp-a) 60%, transparent);
+    color: var(--sp-a);
+  }
+  .sp-ring {
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--sp-a) 40%, transparent);
   }
 }
 

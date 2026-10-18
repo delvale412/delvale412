@@ -5,12 +5,14 @@ import { ProjectSpotlight } from "./ProjectSpotlight";
 import { projects } from "@/data/projects";
 
 export function ProjectsShowcase() {
-  const featured = projects.find((p) => p.featured);
-  const rest = projects.filter((p) => !p.featured);
+  const spotlights = projects.filter((p) => p.spotlight);
+  const rest = projects.filter((p) => !p.spotlight);
 
   return (
     <>
-      {featured ? <ProjectSpotlight project={featured} /> : null}
+      {spotlights.map((project, i) => (
+        <ProjectSpotlight key={project.slug} project={project} flip={i % 2 === 1} />
+      ))}
 
       <section id="projetos" className="py-24 sm:py-32">
         <Container>

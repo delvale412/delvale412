@@ -11,31 +11,39 @@ type Particle = {
   size: number;
 };
 
+export type Shape = "icosahedron" | "torus" | "octahedron";
 type Variant = "spotlight" | "global";
 
-// [main, hot] RGB triplets per variant
-const PALETTES: Record<Variant, [string, string]> = {
-  spotlight: ["251, 197, 49", "239, 59, 76"],
-  global: ["167, 139, 250", "226, 214, 255"],
+type Body = {
+  verts: Vec3[];
+  edges: [number, number][];
+  scale: number;
+  spin: number;
+  dots: boolean;
+  weight: number;
 };
 
-// Icosahedron (d20) geometry
-const PHI = (1 + Math.sqrt(5)) / 2;
-const D20_VERTS: Vec3[] = [
-  [-1, PHI, 0], [1, PHI, 0], [-1, -PHI, 0], [1, -PHI, 0],
-  [0, -1, PHI], [0, 1, PHI], [0, -1, -PHI], [0, 1, -PHI],
-  [PHI, 0, -1], [PHI, 0, 1], [-PHI, 0, -1], [-PHI, 0, 1],
-];
-const D20_FACES: [number, number, number][] = [
-  [0, 11, 5], [0, 5, 1], [0, 1, 7], [0, 7, 10], [0, 10, 11],
-  [1, 5, 9], [5, 11, 4], [11, 10, 2], [10, 7, 6], [7, 1, 8],
-  [3, 9, 4], [3, 4, 2], [3, 2, 6], [3, 6, 8], [3, 8, 9],
-  [4, 9, 5], [2, 4, 11], [6, 2, 10], [8, 6, 7], [9, 8, 1],
-];
-const D20_EDGES: [number, number][] = (() => {
+// default [main, hot] RGB triplets
+const GLOBAL_COLORS: [string, string] = ["167, 139, 250", "226, 214, 255"];
+const SPOTLIGHT_COLORS: [string, string] = ["251, 197, 49", "239, 59, 76"];
+
+function icosahedron(): Body {
+  const phi = (1 + Math.sqrt(5)) / 2;
+  const norm = Math.hypot(1, phi);
+  const raw: Vec3[] = [
+    [-1, phi, 0], [1, phi, 0], [-1, -phi, 0], [1, -phi, 0],
+    [0, -1, phi], [0, 1, phi], [0, -1, -phi], [0, 1, -phi],
+    [phi, 0, -1], [phi, 0, 1], [-phi, 0, -1], [-phi, 0, 1],
+  ];
+  const faces: [number, number, number][] = [
+    [0, 11, 5], [0, 5, 1], [0, 1, 7], [0, 7, 10], [0, 10, 11],
+    [1, 5, 9], [5, 11, 4], [11, 10, 2], [10, 7, 6], [7, 1, 8],
+    [3, 9, 4], [3, 4, 2], [3, 2, 6], [3, 6, 8], [3, 8, 9],
+    [4, 9, 5], [2, 4, 11], [6, 2, 10], [8, 6, 7], [9, 8, 1],
+  ];
   const seen = new Set<string>();
   const edges: [number, number][] = [];
-  for (const [a, b, c] of D20_FACES) {
+  for (const [a, b, c] of faces) {
     for (const [x, y] of [[a, b], [b, c], [c, a]] as const) {
       const key = x < y ? `${x}-${y}` : `${y}-${x}`;
       if (!seen.has(key)) {
@@ -44,8 +52,54 @@ const D20_EDGES: [number, number][] = (() => {
       }
     }
   }
-  return edges;
-})();
+  return {
+    verts: raw.map((v) => [v[0] / norm, v[1] / norm, v[2] / norm] as Vec3),
+    edges,
+    scale: 1,
+    spin: 1,
+    dots: true,
+    weight: 1,
+  };
+}
+
+function octahedron(scale: number, spin: number): Body {
+  const verts: Vec3[] = [
+    [1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1],
+  ];
+  const edges: [number, number][] = [];
+  for (let a = 0; a < 6; a++) {
+    for (let b = a + 1; b < 6; b++) {
+      // every pair except opposite vertices (0-1, 2-3, 4-5)
+      if (!(a % 2 === 0 && b === a + 1)) edges.push([a, b]);
+    }
+  }
+  return { verts, edges, scale, spin, dots: true, weight: 1.2 };
+}
+
+function torus(): Body {
+  const N = 22;
+  const M = 10;
+  const R = 0.7;
+  const r = 0.3;
+  const verts: Vec3[] = [];
+  const edges: [number, number][] = [];
+  for (let i = 0; i < N; i++) {
+    for (let j = 0; j < M; j++) {
+      const th = (i / N) * Math.PI * 2;
+      const ph = (j / M) * Math.PI * 2;
+      verts.push([(R + r * Math.cos(ph)) * Math.cos(th), (R + r * Math.cos(ph)) * Math.sin(th), r * Math.sin(ph)]);
+      edges.push([i * M + j, i * M + ((j + 1) % M)]);
+      edges.push([i * M + j, ((i + 1) % N) * M + j]);
+    }
+  }
+  return { verts, edges, scale: 1, spin: 0.8, dots: false, weight: 0.55 };
+}
+
+const SHAPES: Record<Shape, () => Body[]> = {
+  icosahedron: () => [icosahedron()],
+  octahedron: () => [octahedron(1, 1), octahedron(0.5, -1.4)],
+  torus: () => [torus()],
+};
 
 function rotate(v: Vec3, rx: number, ry: number, rz: number): Vec3 {
   let [x, y, z] = v;
@@ -59,15 +113,24 @@ function rotate(v: Vec3, rx: number, ry: number, rz: number): Vec3 {
 }
 
 /**
- * Animated 3D particle field with a wireframe d20, drawn on a 2D canvas with
- * a hand-rolled perspective projection (no 3D library, so it stays light).
+ * Animated 3D particle field, optionally with a rotating wireframe solid, drawn
+ * on a 2D canvas with a hand-rolled perspective projection (no 3D library, so
+ * it stays light). `main` / `hot` are "r, g, b" triplets.
  */
 export function ParticleField({
   className = "",
   variant = "spotlight",
+  shape = "icosahedron",
+  main,
+  hot,
+  align = "right",
 }: {
   className?: string;
   variant?: Variant;
+  shape?: Shape;
+  main?: string;
+  hot?: string;
+  align?: "left" | "right";
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -76,8 +139,11 @@ export function ParticleField({
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx) return;
 
-    const [GOLD, CRIT] = PALETTES[variant];
     const isGlobal = variant === "global";
+    const fallback = isGlobal ? GLOBAL_COLORS : SPOTLIGHT_COLORS;
+    const MAIN = main ?? fallback[0];
+    const HOT = hot ?? fallback[1];
+    const bodies = isGlobal ? [] : SHAPES[shape]();
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let w = 0;
@@ -157,7 +223,7 @@ export function ParticleField({
           if (d2 < maxDist * maxDist) {
             const k = 1 - Math.sqrt(d2) / maxDist;
             const depth = Math.min(1, Math.max(0.15, (a.s + b.s) * 0.75));
-            ctx.strokeStyle = `rgba(${a.hot && b.hot ? CRIT : GOLD}, ${k * (isGlobal ? 0.28 : 0.32) * depth})`;
+            ctx.strokeStyle = `rgba(${a.hot && b.hot ? HOT : MAIN}, ${k * (isGlobal ? 0.28 : 0.32) * depth})`;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -170,7 +236,7 @@ export function ParticleField({
       proj.sort((a, b) => b.z - a.z);
       for (const pr of proj) {
         const depth = Math.min(1, Math.max(0.2, pr.s * 0.9));
-        const color = pr.hot ? CRIT : GOLD;
+        const color = pr.hot ? HOT : MAIN;
         const r = pr.size * (0.6 + pr.s);
         if (pr.size > 1.9) {
           const g = ctx.createRadialGradient(pr.x, pr.y, 0, pr.x, pr.y, r * 5);
@@ -187,49 +253,57 @@ export function ParticleField({
         ctx.fill();
       }
 
-      if (isGlobal) return;
+      if (bodies.length === 0) return;
 
-      // wireframe d20
+      // wireframe solid
       const dieR = w < 1024 ? 38 : Math.min(Math.min(w, h) * 0.2, 140);
-      const dieX = w - dieR * (w < 1024 ? 1.5 : 1.9);
+      const dieX = align === "right" ? w - dieR * (w < 1024 ? 1.5 : 1.9) : dieR * (w < 1024 ? 1.5 : 1.9);
       const dieY = w < 1024 ? 46 : h * 0.16 + dieR;
       const bob = Math.sin(t * 0.9) * 6;
-      const norm = Math.hypot(1, PHI);
-      const dv = D20_VERTS.map((v) => {
-        const [rx, ry, rz] = rotate(
-          [v[0] / norm, v[1] / norm, v[2] / norm],
-          t * 0.45 + pointer.y * 0.6,
-          t * 0.62 + pointer.x * 0.9,
-          t * 0.2,
-        );
-        const persp = 1 / (1 - rz * 0.35);
-        return { x: dieX + rx * dieR * persp, y: dieY + bob + ry * dieR * persp, z: rz };
-      });
 
       const glow = ctx.createRadialGradient(dieX, dieY + bob, 0, dieX, dieY + bob, dieR * 1.9);
-      glow.addColorStop(0, `rgba(${CRIT}, 0.2)`);
-      glow.addColorStop(0.5, `rgba(${GOLD}, 0.06)`);
-      glow.addColorStop(1, `rgba(${GOLD}, 0)`);
+      glow.addColorStop(0, `rgba(${HOT}, 0.2)`);
+      glow.addColorStop(0.5, `rgba(${MAIN}, 0.06)`);
+      glow.addColorStop(1, `rgba(${MAIN}, 0)`);
       ctx.fillStyle = glow;
       ctx.beginPath();
       ctx.arc(dieX, dieY + bob, dieR * 1.9, 0, Math.PI * 2);
       ctx.fill();
 
+      type P = { x: number; y: number; z: number };
+      const edges: { a: P; b: P; z: number; weight: number }[] = [];
+      const dots: P[] = [];
+      for (const body of bodies) {
+        const pts: P[] = body.verts.map((v) => {
+          const [rx, ry, rz] = rotate(
+            [v[0] * body.scale, v[1] * body.scale, v[2] * body.scale],
+            t * 0.45 * body.spin + pointer.y * 0.6,
+            t * 0.62 * body.spin + pointer.x * 0.9,
+            t * 0.2 * body.spin,
+          );
+          const persp = 1 / (1 - rz * 0.35);
+          return { x: dieX + rx * dieR * persp, y: dieY + bob + ry * dieR * persp, z: rz };
+        });
+        for (const [a, b] of body.edges) {
+          edges.push({ a: pts[a], b: pts[b], z: (pts[a].z + pts[b].z) / 2, weight: body.weight });
+        }
+        if (body.dots) dots.push(...pts);
+      }
+
       ctx.lineCap = "round";
-      const edges = D20_EDGES.map(([a, b]) => ({ a: dv[a], b: dv[b], z: (dv[a].z + dv[b].z) / 2 }));
       edges.sort((e1, e2) => e1.z - e2.z);
       for (const e of edges) {
         const front = (e.z + 1) / 2;
-        ctx.strokeStyle = `rgba(${GOLD}, ${0.18 + front * 0.6})`;
-        ctx.lineWidth = 0.8 + front * 1.1;
+        ctx.strokeStyle = `rgba(${MAIN}, ${(0.18 + front * 0.6) * Math.min(1, e.weight + 0.2)})`;
+        ctx.lineWidth = (0.8 + front * 1.1) * e.weight;
         ctx.beginPath();
         ctx.moveTo(e.a.x, e.a.y);
         ctx.lineTo(e.b.x, e.b.y);
         ctx.stroke();
       }
-      for (const v of dv) {
+      for (const v of dots) {
         const front = (v.z + 1) / 2;
-        ctx.fillStyle = `rgba(${CRIT}, ${0.4 + front * 0.6})`;
+        ctx.fillStyle = `rgba(${HOT}, ${0.4 + front * 0.6})`;
         ctx.beginPath();
         ctx.arc(v.x, v.y, 1.6 + front * 2, 0, Math.PI * 2);
         ctx.fill();
@@ -296,7 +370,7 @@ export function ParticleField({
       window.removeEventListener("pointermove", onPointer);
       document.removeEventListener("visibilitychange", onVisibility);
     };
-  }, [variant]);
+  }, [variant, shape, main, hot, align]);
 
   return <canvas ref={canvasRef} aria-hidden="true" className={`pointer-events-none ${className}`} />;
 }
