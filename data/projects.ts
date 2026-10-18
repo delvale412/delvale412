@@ -88,4 +88,29 @@ export const projects: Project[] = [
     demonstrates:
       "Capacidade de criar interfaces ricas em interação sem depender de ferramentas prontas, com atenção aos detalhes de uso e uma ilustração própria.",
   },
+  {
+    slug: "falha-critica-3d",
+    title: "Falha Crítica 3D",
+    category: "Loja virtual de estúdio de impressão 3D",
+    featured: false,
+    problem:
+      "Dar a um estúdio de miniaturas e estatuetas em resina uma vitrine online completa, que mostra o catálogo e transforma cada visita em um pedido ou orçamento pelo WhatsApp.",
+    build: [
+      "Site com várias páginas (Home, Catálogo Pronta Entrega, página de produto, Projetos Personalizados), com visual temático de RPG e cultura geek",
+      "Catálogo com filtros por universo, escala e acabamento, para o cliente achar a peça certa rápido",
+      "Página de produto com detalhes da peça e botão de pedido direto no WhatsApp",
+      "Formulário de orçamento para peças sob medida, que monta a mensagem pronta para o WhatsApp do estúdio",
+      "Preferências e pedidos salvos no próprio navegador, sem precisar de cadastro",
+      "No ar, hospedado na Vercel",
+    ],
+    tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Google Fonts", "Integração com WhatsApp", "Vercel"],
+    liveUrl: "https://falha-critica3d.vercel.app/",
+    githubUrl: "https://github.com/delvale412/falha_critica3d",
+    image: {
+      desktop: "/projects/falha-critica-3d-desktop.webp",
+      mobile: "/projects/falha-critica-3d-mobile.webp",
+    },
+    demonstrates:
+      "Capacidade de montar uma vitrine comercial completa para um negócio real, com identidade visual própria, filtros interativos e um caminho curto entre o interesse e o pedido.",
+  },
 ];

@@ -42,6 +42,7 @@ Desenvolvedor de Software e estudante de Engenharia de Software na Universidade 
 | **IronBase** | Site institucional completo para uma consultoria de alta performance, com calculadora de IMC interativa e integração com WhatsApp | [ver projeto](https://ironbase-two.vercel.app/) |
 | **Swiss Gourmert** | Aplicação web com backend em FastAPI + Jinja2 para um restaurante, com deploy serverless na Vercel | [ver projeto](https://swiss-gourmert.vercel.app/) · [código](https://github.com/delvale412/Swiss-Gourmert) |
 | **Landing Page** | Landing page institucional em HTML/CSS/JS puro, com carrossel, FAQ e animações de scroll | [ver projeto](https://landingpage-mu-pink-35.vercel.app/) · [código](https://github.com/delvale412/landingpage) |
+| **Falha Crítica 3D** | Loja virtual de um estúdio de impressão 3D em resina, com catálogo filtrável, páginas de produto e pedidos e orçamentos pelo WhatsApp | [ver projeto](https://falha-critica3d.vercel.app/) · [código](https://github.com/delvale412/falha_critica3d) |
 
 Veja todos os projetos, serviços e um formulário de orçamento no [site completo](https://matheusdovalelameira.vercel.app).
 
