@@ -1,27 +1,29 @@
 import { Container } from "../ui/Container";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Reveal } from "../ui/Reveal";
+import { WhatsAppButton } from "../ui/WhatsAppButton";
+import { social } from "@/data/social";
 
 const traits = [
   {
     number: "01",
     title: "Resolve o problema certo",
-    description: "Entendo o que você realmente precisa antes de pensar em qualquer tecnologia.",
+    description: "Entendo o que você realmente precisa antes de começar a construir qualquer coisa.",
   },
   {
     number: "02",
-    title: "Aprende rápido",
-    description: "Facilidade para me adaptar a diferentes ferramentas, desafios e formas de trabalhar.",
+    title: "Fala a sua língua",
+    description: "Explico tudo sem termo difícil e sem enrolação, do começo ao fim.",
   },
   {
     number: "03",
     title: "Cuida do projeto inteiro",
-    description: "Da tela que o usuário vê até o que roda por trás, sem precisar contratar várias pessoas.",
+    description: "Do visual que o cliente vê até o funcionamento por trás, sem você precisar contratar várias pessoas.",
   },
   {
     number: "04",
     title: "Entrega o que funciona",
-    description: "Acompanho tudo até o site ou sistema estar pronto, no ar e funcionando de verdade.",
+    description: "Acompanho tudo até o site estar pronto, no ar e funcionando de verdade.",
   },
 ];
 
@@ -29,27 +31,26 @@ export function About() {
   return (
     <section id="sobre" className="py-24 sm:py-32">
       <Container>
-        <SectionHeading eyebrow="Sobre" title="Mais do que código." />
+        <SectionHeading eyebrow="Sobre" title="Quem vai cuidar do seu projeto." />
 
         <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <Reveal delay={80} className="flex flex-col gap-6 text-balance text-base leading-relaxed text-muted sm:text-lg">
             <p>
-              Antes de escrever qualquer linha de código, eu procuro entender o problema: o que
-              você precisa resolver, quem vai usar a solução e o que realmente faz diferença pro
-              seu negócio ou projeto.
+              Sou o Matheus, de Brasília. Atuo há {social.yearsExperience} anos na área de desenvolvimento e estudo
+              Engenharia de Software na Universidade de Brasília (UnB), hoje no 8º semestre.
             </p>
             <p>
-              A partir daí, cuido de cada etapa, da ideia ao produto no ar: a forma como ele é
-              construído por trás, a experiência de quem vai usar no dia a dia, e os detalhes
-              técnicos que garantem que tudo funcione bem, de forma estável e sem dor de cabeça
-              pra você.
+              Antes de começar qualquer projeto, procuro entender o que você precisa resolver, quem
+              vai usar e o que realmente faz diferença pro seu negócio. Depois cuido de tudo: o visual,
+              o funcionamento e a publicação, sem dor de cabeça pra você.
             </p>
             <p>
-              Desde 2024 aplico esse mesmo cuidado em ambientes exigentes de verdade, desenvolvendo
-              sistemas para instituições como a Polícia Federal e, atualmente, a ANVISA, e trago
-              essa experiência prática para cada projeto que desenvolvo, seja um site simples ou um
-              sistema sob medida.
+              Já desenvolvi sistemas para instituições como a Polícia Federal e, hoje, a ANVISA. Levo
+              esse mesmo cuidado para cada projeto, seja um site simples ou um sistema sob medida.
             </p>
+            <div>
+              <WhatsAppButton label="Chamar no WhatsApp" from="sobre" size="lg" />
+            </div>
           </Reveal>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">

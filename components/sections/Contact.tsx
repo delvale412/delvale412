@@ -1,6 +1,7 @@
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
-import { GitHubIcon, LinkedInIcon, MailIcon, DownloadIcon, WhatsAppIcon } from "../ui/icons";
+import { WhatsAppButton } from "../ui/WhatsAppButton";
+import { MailIcon, WhatsAppIcon } from "../ui/icons";
 import { social } from "@/data/social";
 
 export function Contact() {
@@ -22,36 +23,20 @@ export function Contact() {
 
         <Reveal delay={80}>
           <h2 className="mt-4 text-balance font-display text-4xl font-semibold tracking-tight text-paper sm:text-5xl md:text-6xl">
-            Tem uma ideia?
+            Vamos conversar?
           </h2>
         </Reveal>
 
         <Reveal delay={160}>
           <p className="mt-5 max-w-md text-balance text-base text-muted sm:text-lg">
-            Me conta o que você precisa e vamos ver, sem compromisso, como transformar isso em
-            algo real.
+            Me conta sobre o seu negócio pelo WhatsApp. Respondo rápido e, sem compromisso, te digo
+            qual pacote faz mais sentido pra você.
           </p>
         </Reveal>
 
         <Reveal delay={240}>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={social.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-ink transition-colors duration-300 hover:bg-accent-strong"
-            >
-              <WhatsAppIcon className="h-4 w-4" />
-              Falar no WhatsApp
-            </a>
-            <a
-              href={social.resumeUrl}
-              download
-              className="inline-flex items-center gap-2 rounded-full border border-line-strong px-7 py-3.5 text-sm font-medium text-paper transition-colors duration-300 hover:border-accent/60 hover:text-accent"
-            >
-              Baixar currículo
-              <DownloadIcon />
-            </a>
+          <div className="mt-9">
+            <WhatsAppButton label="Chamar no WhatsApp" from="contact_section" size="lg" />
           </div>
         </Reveal>
 
@@ -72,24 +57,6 @@ export function Contact() {
             >
               <MailIcon className="h-4 w-4" />
               {social.email}
-            </a>
-            <a
-              href={social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-muted transition-colors duration-200 hover:text-accent"
-            >
-              <GitHubIcon className="h-4 w-4" />
-              {social.githubHandle}
-            </a>
-            <a
-              href={social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-muted transition-colors duration-200 hover:text-accent"
-            >
-              <LinkedInIcon className="h-4 w-4" />
-              LinkedIn
             </a>
           </div>
         </Reveal>

@@ -4,6 +4,7 @@ import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ParticleField } from "@/components/ui/ParticleField";
+import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { social } from "@/data/social";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
@@ -29,17 +30,19 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Matheus do Vale | Desenvolvimento de Software sob Medida",
-    template: "%s | Matheus do Vale",
+    default: "Vale Desenvolvimentos | Seu negócio encontrado e clientes no WhatsApp",
+    template: "%s | Vale Desenvolvimentos",
   },
   description:
-    "Desenvolvimento de software e experiências digitais sob medida: sites, landing pages, sistemas web e aplicações, por um desenvolvedor Full Stack com experiência profissional real.",
+    "Criação de sites, páginas de vendas, lojas online e sistemas para pequenos negócios serem encontrados e receberem contatos pelo WhatsApp. 8 anos de experiência em desenvolvimento e atendimento direto com o Matheus.",
   keywords: [
+    "Vale Desenvolvimentos",
     "Matheus do Vale",
-    "Desenvolvedor Full Stack",
-    "Desenvolvimento de sites",
-    "Desenvolvimento de sistemas web",
-    "Engenharia de Software",
+    "criação de sites",
+    "site para pequenos negócios",
+    "página de vendas",
+    "loja online",
+    "site com WhatsApp",
     "Brasília",
   ],
   authors: [{ name: social.name }],
@@ -49,16 +52,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: siteUrl,
-    title: "Matheus do Vale | Desenvolvimento de Software sob Medida",
+    title: "Vale Desenvolvimentos | Seu negócio encontrado e clientes no WhatsApp",
     description:
-      "Sites, landing pages, sistemas web e aplicações sob medida, da ideia ao produto no ar.",
-    siteName: "Matheus do Vale",
+      "Seu site pronto em poucos dias, feito para o seu negócio ser encontrado e receber contatos direto no WhatsApp.",
+    siteName: "Vale Desenvolvimentos",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Matheus do Vale | Desenvolvimento de Software sob Medida",
+    title: "Vale Desenvolvimentos | Seu negócio encontrado e clientes no WhatsApp",
     description:
-      "Sites, landing pages, sistemas web e aplicações sob medida, da ideia ao produto no ar.",
+      "Seu site pronto em poucos dias, feito para o seu negócio ser encontrado e receber contatos direto no WhatsApp.",
   },
 };
 
@@ -67,7 +70,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     "@context": "https://schema.org",
     "@type": "Person",
     name: social.name,
-    jobTitle: "Software Developer",
+    jobTitle: "Desenvolvedor de sites e sistemas",
     url: siteUrl,
     email: `mailto:${social.email}`,
     address: {
@@ -118,6 +121,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navbar />
         <main id="main-content">{children}</main>
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   );

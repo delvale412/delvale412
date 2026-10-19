@@ -17,7 +17,8 @@ export type Project = {
   featured: boolean;
   problem: string;
   build: string[];
-  tech: string[];
+  /** short plain-language highlights shown as tags */
+  highlights: string[];
   liveUrl: string;
   githubUrl: string | null;
   image: {
@@ -44,9 +45,9 @@ export const projects: Project[] = [
       "Página de produto com detalhes da peça e botão de pedido direto no WhatsApp",
       "Formulário de orçamento para peças sob medida, que monta a mensagem pronta para o WhatsApp do estúdio",
       "Preferências e pedidos salvos no próprio navegador, sem precisar de cadastro",
-      "No ar, hospedado na Vercel",
+      "No ar na internet, pronto para receber clientes",
     ],
-    tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Google Fonts", "Integração com WhatsApp", "Vercel"],
+    highlights: ["Catálogo com filtros", "Pedido pelo WhatsApp", "Orçamento sob medida", "Funciona no celular"],
     liveUrl: "https://falha-critica3d.vercel.app/",
     githubUrl: "https://github.com/delvale412/falha_critica3d",
     image: {
@@ -74,10 +75,10 @@ export const projects: Project[] = [
       "Uma página própria para cada um dos 11 procedimentos, do clareamento aos implantes",
       "Três caminhos para marcar horário: WhatsApp com mensagem pronta, formulário de agendamento e telefone",
       "Visual elegante e acolhedor, pensado para passar segurança, com selos de confiança logo na primeira tela",
-      "Banner de cookies com opções de consentimento, seguindo a LGPD, e página de política de privacidade",
-      "No ar, hospedado na Vercel",
+      "Aviso de cookies com opções de escolha, seguindo a lei de proteção de dados (LGPD), e página de política de privacidade",
+      "No ar na internet, pronto para receber clientes",
     ],
-    tech: ["Next.js", "React", "Vercel", "Integração com WhatsApp"],
+    highlights: ["Agendamento pelo WhatsApp", "11 páginas de procedimentos", "Funciona no celular", "Segue a LGPD"],
     liveUrl: "https://clinica-aurea-odonto.vercel.app/",
     githubUrl: null,
     image: {
@@ -101,12 +102,12 @@ export const projects: Project[] = [
     problem:
       "Apresentar o cardápio, a história e a localização de um restaurante, com um site rápido e fácil de manter atualizado.",
     build: [
-      "Site com várias páginas (Início, Cardápio, História, Mídia & Eventos, Localização), geradas por um sistema próprio nos bastidores",
-      "Menu responsivo, adaptado pro celular",
+      "Site com várias páginas (Início, Cardápio, História, Mídia & Eventos, Localização), organizadas por um sistema próprio, que facilita as atualizações",
+      "Menu que se adapta ao celular",
       "Seções visuais contando a história e os diferenciais do restaurante",
-      "No ar, hospedado na Vercel",
+      "No ar na internet, pronto para receber clientes",
     ],
-    tech: ["Python", "FastAPI", "Jinja2", "HTML", "CSS", "JavaScript", "Vercel (serverless)"],
+    highlights: ["Cardápio completo", "Fácil de atualizar", "Localização e horários", "Funciona no celular"],
     stats: [
       { value: "5", label: "páginas no ar" },
       { value: "1", label: "sistema próprio por trás" },
@@ -135,7 +136,7 @@ export const projects: Project[] = [
       "A calculadora gera automaticamente uma mensagem pronta pra enviar no WhatsApp",
       "Botão de WhatsApp sempre visível e chamadas para contato em todas as páginas",
     ],
-    tech: ["HTML5", "CSS3", "JavaScript", "Font Awesome", "Google Fonts", "Integração com WhatsApp"],
+    highlights: ["Calculadora de IMC", "Mensagem pronta no WhatsApp", "Várias páginas", "Funciona no celular"],
     liveUrl: "https://ironbase-two.vercel.app/",
     githubUrl: null,
     image: {
@@ -160,7 +161,7 @@ export const projects: Project[] = [
       "Mapa incorporado e formulário que leva direto pro WhatsApp",
       "Animações suaves conforme a pessoa rola a página",
     ],
-    tech: ["HTML5", "CSS3", "JavaScript", "SVG"],
+    highlights: ["Prova social e perguntas frequentes", "Contato pelo WhatsApp", "Mapa incorporado", "Funciona no celular"],
     liveUrl: "https://landingpage-mu-pink-35.vercel.app/",
     githubUrl: "https://github.com/delvale412/landingpage",
     image: {

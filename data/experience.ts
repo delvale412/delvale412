@@ -7,46 +7,41 @@ export type ExperienceEntry = {
   current: boolean;
   summary: string;
   highlights: string[];
-  tech: string[];
 };
 
 export const experience: ExperienceEntry[] = [
   {
     id: "anvisa",
     company: "ANVISA (Agência Nacional de Vigilância Sanitária)",
-    role: "Desenvolvedor de Software / Full Stack",
+    role: "Desenvolvedor de sistemas",
     period: "Desde setembro de 2025",
     location: "Brasília, DF",
     current: true,
     summary:
-      "Desenvolvimento de sistemas de software do primeiro rascunho até o sistema pronto e em uso, participando de cada etapa do processo.",
+      "Criação de sistemas do primeiro rascunho até o sistema pronto e em uso, participando de cada etapa do processo.",
     highlights: [
-      "Desenvolvimento completo de sistemas internos, da interface ao que roda por trás",
-      "Conexão entre diferentes sistemas, pra tudo funcionar de forma integrada",
-      "Organização e estruturação de bancos de dados",
-      "Desenvolvimento de soluções com tecnologias Oracle",
-      "Cuidado da infraestrutura que mantém os sistemas no ar, estáveis e seguros",
-      "Levantamento de necessidades e implementação de soluções sob medida",
+      "Sistemas internos feitos do início ao fim, da tela que o usuário vê até o que funciona por trás",
+      "Ligação entre diferentes sistemas, para tudo funcionar de forma integrada",
+      "Organização das informações para que sejam fáceis de consultar e seguras",
+      "Cuidado para que os sistemas fiquem sempre no ar, estáveis e protegidos",
+      "Conversa com as áreas para entender a necessidade e entregar a solução certa",
     ],
-    tech: ["SQL", "Oracle", "APIs", "Docker", "Kubernetes", "Full Stack"],
   },
   {
     id: "policia-federal",
     company: "Polícia Federal",
-    role: "Desenvolvimento de Sistemas / Full Stack",
+    role: "Desenvolvedor de sistemas",
     period: "Março de 2024 a setembro de 2025",
     location: "Brasília, DF",
     current: false,
     summary:
-      "Desenvolvimento de sistemas web para atender as mais diversas demandas internas, do entendimento da necessidade até a entrega final.",
+      "Criação de sistemas web para atender as mais diversas necessidades internas, do entendimento do problema até a entrega final.",
     highlights: [
-      "Desenvolvimento ágil de sistemas, permitindo que diferentes áreas tivessem suas soluções rapidamente",
-      "Desenvolvimento e manutenção de sistemas web",
-      "Apoio no desenvolvimento de sistemas para atender toda a instituição",
-      "Conversas com as áreas pra entender exatamente o que cada sistema precisava fazer",
+      "Sistemas entregues com agilidade, permitindo que diferentes áreas tivessem suas soluções rapidamente",
+      "Criação e manutenção de sistemas usados por toda a instituição",
+      "Conversas com as áreas para entender exatamente o que cada sistema precisava fazer",
       "Planejamento de como cada sistema e suas informações deveriam ser organizados",
-      "Criação de manuais e guias pra facilitar o uso dos sistemas",
+      "Manuais e guias para facilitar o uso dos sistemas",
     ],
-    tech: ["Low-Code", "Modelagem de Dados", "Requisitos", "Documentação Técnica"],
   },
 ];

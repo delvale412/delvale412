@@ -186,6 +186,7 @@ export function ParticleField({
 
     const draw = () => {
       ctx.clearRect(0, 0, w, h);
+      if (w < 2 || h < 2) return;
 
       const fov = Math.min(w, h) * 1.15;
       const cx = w / 2;
@@ -198,8 +199,9 @@ export function ParticleField({
       const proj: { x: number; y: number; s: number; z: number; hot: boolean; size: number }[] = [];
       for (const pt of particles) {
         const [rx, ry, rz] = rotate(pt.p, pitch, yaw, 0);
-        const z = rz * span + span * 1.7;
-        const s = fov / z;
+        // keep the camera outside the particle cube so z never reaches 0
+        const z = rz * span + span * 2.1;
+        const s = Math.min(fov / z, 2.5);
         proj.push({
           x: cx + rx * span * s,
           y: cy + ry * span * s,

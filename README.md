@@ -44,7 +44,7 @@ Desenvolvedor de Software e estudante de Engenharia de Software na Universidade 
 | **Landing Page** | Landing page institucional em HTML/CSS/JS puro, com carrossel, FAQ e animações de scroll | [ver projeto](https://landingpage-mu-pink-35.vercel.app/) · [código](https://github.com/delvale412/landingpage) |
 | **Falha Crítica 3D** | Loja virtual de um estúdio de impressão 3D em resina, com catálogo filtrável, páginas de produto e pedidos e orçamentos pelo WhatsApp | [ver projeto](https://falha-critica3d.vercel.app/) · [código](https://github.com/delvale412/falha_critica3d) |
 
-Veja todos os projetos, serviços e um formulário de orçamento no [site completo](https://matheusdovalelameira.vercel.app).
+Veja todos os projetos, serviços e valores no [site completo](https://matheusdovalelameira.vercel.app).
 
 ---
 
@@ -65,11 +65,11 @@ Abra [http://localhost:3000](http://localhost:3000).
 
 ```
 app/               rotas, layout, metadata e SEO (App Router)
-  /, /projetos, /projetos/[slug], /servicos, /sobre, /orcamento, /contato
+  /, /projetos, /projetos/[slug], /servicos, /sobre, /contato
 components/
   layout/          Navbar, Footer, Breadcrumbs
-  sections/        Hero, Projetos, Sobre, Experiência, Skills, IA, Processo...
-  forms/           formulário de orçamento e contato rápido (geram mensagem no WhatsApp, sem backend)
+  sections/        Hero, Projetos, Valores, Sobre, Experiência, Processo...
+  forms/           contato rápido (gera a mensagem no WhatsApp, sem backend)
   ui/              primitivos reutilizáveis (botões, tags, reveal-on-scroll, ícones)
 data/              conteúdo do site (projetos, serviços, experiência, skills, formação, social)
 lib/               analytics (no-op até configurar GA4) e constante de URL do site

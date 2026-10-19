@@ -3,9 +3,7 @@
 // invents an ID. See README for how to turn this on.
 
 type EventName =
-  | "cta_orcamento_click"
   | "cta_whatsapp_click"
-  | "orcamento_form_submit"
   | "contato_form_submit"
   | "case_study_view";
 

@@ -1,7 +1,9 @@
 export const social = {
   name: "Matheus do Vale Lameira",
+  brand: "Vale Desenvolvimentos",
   shortName: "Matheus do Vale",
-  role: "Software Developer • Full Stack • Software Engineering",
+  role: "Desenvolvedor de sites e sistemas",
+  yearsExperience: 8,
   location: "Brasília, DF",
   email: "mvlameira@gmail.com",
   github: "https://github.com/delvale412",
@@ -12,5 +14,10 @@ export const social = {
   whatsappBase: "https://wa.me/5561999298384",
   whatsapp:
     "https://wa.me/5561999298384?text=" +
-    encodeURIComponent("Olá, Matheus! Vi seu portfólio e gostaria de conversar sobre um projeto."),
+    encodeURIComponent("Olá, Matheus! Vi seu site e gostaria de saber mais sobre seus serviços."),
 };
+
+/** WhatsApp link that opens the chat with a message already typed. */
+export function whatsappLink(message: string) {
+  return `${social.whatsappBase}?text=${encodeURIComponent(message)}`;
+}

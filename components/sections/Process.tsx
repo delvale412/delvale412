@@ -7,9 +7,9 @@ export function Process() {
   return (
     <section id="processo" className="border-t border-line py-24 sm:py-32">
       <Container>
-        <SectionHeading eyebrow="Método" title="Da ideia ao produto." />
+        <SectionHeading eyebrow="Simples e sem surpresas" title="Como funciona, passo a passo." />
 
-        <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-5">
           {process.map((step, i) => (
             <Reveal key={step.number} delay={(i % 4) * 80}>
               <div className="relative pl-0">

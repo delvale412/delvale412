@@ -1,5 +1,4 @@
 import { Reveal } from "../ui/Reveal";
-import { Tag } from "../ui/Tag";
 import type { ExperienceEntry } from "@/data/experience";
 
 export function ExperienceCard({ entry, delay = 0 }: { entry: ExperienceEntry; delay?: number }) {
@@ -39,12 +38,6 @@ export function ExperienceCard({ entry, delay = 0 }: { entry: ExperienceEntry; d
             </li>
           ))}
         </ul>
-
-        <div className="mt-6 flex flex-wrap gap-2">
-          {entry.tech.map((t) => (
-            <Tag key={t}>{t}</Tag>
-          ))}
-        </div>
       </article>
     </Reveal>
   );

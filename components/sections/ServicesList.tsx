@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Reveal } from "../ui/Reveal";
 import { ArrowUpRightIcon } from "../ui/icons";
+import { WhatsAppButton } from "../ui/WhatsAppButton";
 import { services } from "@/data/services";
 
 export function ServicesList() {
@@ -22,13 +23,13 @@ export function ServicesList() {
                 </p>
               </div>
               <span className="shrink-0 rounded-full border border-line-strong px-4 py-1.5 font-mono text-xs uppercase tracking-wider text-faint">
-                Sob consulta
+                {service.badge}
               </span>
             </div>
 
             <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
               <div>
-                <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">O que inclui</p>
+                <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">O que está incluído</p>
                 <ul className="mt-3 flex flex-col gap-2">
                   {service.scope.map((item) => (
                     <li key={item} className="flex gap-2.5 text-sm leading-relaxed text-muted">
@@ -81,13 +82,12 @@ export function ServicesList() {
               ))}
             </div>
 
-            <Link
-              href={`/orcamento?tipo=${encodeURIComponent(service.formType)}`}
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-ink transition-colors duration-300 hover:bg-accent-strong"
-            >
-              Solicitar orçamento
-              <ArrowUpRightIcon />
-            </Link>
+            <WhatsAppButton
+              label="Falar sobre isso no WhatsApp"
+              message={`Olá, Matheus! Vi seu site e tenho interesse em: ${service.name}. Pode me explicar como funciona?`}
+              from={`servico_${service.slug}`}
+              className="mt-8"
+            />
           </article>
         </Reveal>
       ))}

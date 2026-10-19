@@ -15,10 +15,11 @@ export default function Icon() {
           justifyContent: "center",
           background: "#08090b",
           borderRadius: 7,
-          fontFamily: "sans-serif",
         }}
       >
-        <span style={{ color: "#a78bfa", fontSize: 19, fontWeight: 700 }}>M</span>
+        <svg width="22" height="22" viewBox="0 0 48 48" fill="none">
+          <path d="M5 7 L24 41 L43 7" stroke="#a78bfa" strokeWidth="6" strokeLinecap="square" />
+        </svg>
       </div>
     ),
     { ...size },

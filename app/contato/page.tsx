@@ -3,13 +3,14 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { GitHubIcon, LinkedInIcon, MailIcon, WhatsAppIcon, ArrowUpRightIcon } from "@/components/ui/icons";
+import { LinkedInIcon, MailIcon, WhatsAppIcon, ArrowUpRightIcon } from "@/components/ui/icons";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { QuickContactForm } from "@/components/forms/QuickContactForm";
 import { social } from "@/data/social";
 
 export const metadata: Metadata = {
   title: "Contato",
-  description: "WhatsApp, e-mail e redes profissionais pra falar comigo diretamente.",
+  description: "Fale comigo direto pelo WhatsApp ou por e-mail. Respondo rápido e sem compromisso.",
   alternates: { canonical: "/contato" },
 };
 
@@ -27,15 +28,9 @@ const channels = [
     href: `mailto:${social.email}`,
   },
   {
-    icon: GitHubIcon,
-    label: "GitHub",
-    value: social.githubHandle,
-    href: social.github,
-  },
-  {
     icon: LinkedInIcon,
     label: "LinkedIn",
-    value: "Perfil profissional",
+    value: "Meu perfil profissional",
     href: social.linkedin,
   },
 ];
@@ -49,8 +44,12 @@ export default function ContatoPage() {
           <SectionHeading
             eyebrow="Contato"
             title="Vamos conversar"
-            subtitle="Pra um pedido de orçamento mais detalhado, use a página de orçamento. Pra qualquer outra coisa, fale direto por aqui."
+            subtitle="O caminho mais rápido é o WhatsApp. Me conta o que você precisa e eu te respondo com os próximos passos."
           />
+
+          <div className="mt-8">
+            <WhatsAppButton label="Chamar no WhatsApp agora" from="contato_page" size="lg" />
+          </div>
 
           <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-2">
             <Reveal className="flex flex-col gap-4">
@@ -78,7 +77,7 @@ export default function ContatoPage() {
 
             <Reveal delay={120} className="rounded-3xl border border-line bg-ink-soft p-7 sm:p-10">
               <p className="font-display text-lg font-semibold text-paper">Prefere escrever?</p>
-              <p className="mt-2 text-sm text-muted">Manda uma mensagem rápida por aqui.</p>
+              <p className="mt-2 text-sm text-muted">Escreve aqui e eu te respondo pelo WhatsApp.</p>
               <div className="mt-6">
                 <QuickContactForm />
               </div>

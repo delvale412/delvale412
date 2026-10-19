@@ -1,8 +1,10 @@
 import { Hero } from "@/components/sections/Hero";
 import { ProjectSpotlight } from "@/components/sections/ProjectSpotlight";
 import { FeaturedProjectsTeaser } from "@/components/sections/FeaturedProjectsTeaser";
-import { ServicesTeaser } from "@/components/sections/ServicesTeaser";
-import { Differential } from "@/components/sections/Differential";
+import { Packages } from "@/components/sections/Packages";
+import { BenefitsMarquee } from "@/components/sections/BenefitsMarquee";
+import { Leverage } from "@/components/sections/Leverage";
+import { WhoIAm } from "@/components/sections/WhoIAm";
 import { Process } from "@/components/sections/Process";
 import { Contact } from "@/components/sections/Contact";
 import { projects } from "@/data/projects";
@@ -13,10 +15,12 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <BenefitsMarquee />
       {featured ? <ProjectSpotlight project={featured} /> : null}
+      <Leverage />
       <FeaturedProjectsTeaser />
-      <ServicesTeaser />
-      <Differential />
+      <Packages />
+      <WhoIAm />
       <Process />
       <Contact />
     </>

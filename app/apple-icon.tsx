@@ -14,10 +14,12 @@ export default function AppleIcon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#08090b",
-          fontFamily: "sans-serif",
         }}
       >
-        <span style={{ color: "#a78bfa", fontSize: 96, fontWeight: 700 }}>M</span>
+        <svg width="112" height="112" viewBox="0 0 48 48" fill="none">
+          <path d="M5 7 L24 41 L43 7" stroke="#a78bfa" strokeWidth="4.5" strokeLinecap="square" />
+          <path d="M15.5 7 L24 22 L32.5 7" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="square" />
+        </svg>
       </div>
     ),
     { ...size },

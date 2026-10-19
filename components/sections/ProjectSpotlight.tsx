@@ -6,7 +6,8 @@ import { Reveal } from "../ui/Reveal";
 import { Tag } from "../ui/Tag";
 import { ParticleField } from "../ui/ParticleField";
 import { TiltFrame } from "../ui/TiltFrame";
-import { ArrowUpRightIcon, GitHubIcon } from "../ui/icons";
+import { WhatsAppButton } from "../ui/WhatsAppButton";
+import { ArrowUpRightIcon } from "../ui/icons";
 import type { Project, SpotlightTheme } from "@/data/projects";
 
 const DEFAULT_THEME: SpotlightTheme = {
@@ -129,7 +130,7 @@ export function ProjectSpotlight({ project, flip = false }: { project: Project; 
 
             <Reveal delay={280}>
               <div className="mt-9 flex flex-wrap gap-2">
-                {project.tech.slice(0, 5).map((t) => (
+                {project.highlights.map((t) => (
                   <Tag key={t}>{t}</Tag>
                 ))}
               </div>
@@ -150,17 +151,12 @@ export function ProjectSpotlight({ project, flip = false }: { project: Project; 
                 >
                   Estudo de caso
                 </Link>
-                {project.githubUrl ? (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="sp-ghost inline-flex items-center gap-2 rounded-full border border-line-strong px-5 py-3 text-sm font-medium text-paper transition-colors duration-300"
-                  >
-                    <GitHubIcon className="h-4 w-4" />
-                    Código
-                  </a>
-                ) : null}
+                <WhatsAppButton
+                  label="Quero um site assim"
+                  message={`Olá, Matheus! Vi o projeto ${project.title} no seu site e quero algo parecido para o meu negócio.`}
+                  from={`spotlight_${project.slug}`}
+                  variant="outline"
+                />
               </div>
             </Reveal>
           </div>

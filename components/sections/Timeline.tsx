@@ -1,8 +1,8 @@
 import { Reveal } from "../ui/Reveal";
 
 const milestones = [
-  { year: "2024", title: "Polícia Federal", detail: "Desenvolvimento de Sistemas / Full Stack" },
-  { year: "2025", title: "ANVISA", detail: "Desenvolvimento de Software / Full Stack" },
+  { year: "2024", title: "Polícia Federal", detail: "Desenvolvimento de sistemas" },
+  { year: "2025", title: "ANVISA", detail: "Desenvolvimento de sistemas" },
   { year: "2027", title: "Conclusão prevista", detail: "Engenharia de Software (UnB)" },
 ];
 

@@ -7,7 +7,8 @@ import { Container } from "@/components/ui/Container";
 import { Tag } from "@/components/ui/Tag";
 import { Reveal } from "@/components/ui/Reveal";
 import { ViewTracker } from "@/components/ui/ViewTracker";
-import { ArrowUpRightIcon, GitHubIcon } from "@/components/ui/icons";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { ArrowUpRightIcon } from "@/components/ui/icons";
 import { projects } from "@/data/projects";
 
 export function generateStaticParams() {
@@ -22,7 +23,7 @@ export async function generateMetadata(props: PageProps<"/projetos/[slug]">): Pr
     title: project.title,
     description: project.problem,
     alternates: { canonical: `/projetos/${project.slug}` },
-    openGraph: { title: `${project.title} | Matheus do Vale`, description: project.problem },
+    openGraph: { title: `${project.title} | Vale Desenvolvimentos`, description: project.problem },
   };
 }
 
@@ -65,17 +66,13 @@ export default async function ProjectDetailPage(props: PageProps<"/projetos/[slu
                 Ver projeto no ar
                 <ArrowUpRightIcon />
               </a>
-              {project.githubUrl ? (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-line-strong px-6 py-3 text-sm font-medium text-paper transition-colors duration-300 hover:border-accent/60 hover:text-accent"
-                >
-                  <GitHubIcon className="h-4 w-4" />
-                  Ver código
-                </a>
-              ) : null}
+              <WhatsAppButton
+                label="Quero um site assim"
+                message={`Olá, Matheus! Vi o projeto ${project.title} no seu site e quero algo parecido para o meu negócio.`}
+                from={`projeto_${project.slug}`}
+                variant="outline"
+                size="lg"
+              />
             </div>
           </Reveal>
 
@@ -109,9 +106,9 @@ export default async function ProjectDetailPage(props: PageProps<"/projetos/[slu
             </Reveal>
 
             <Reveal delay={100}>
-              <h2 className="font-display text-xl font-semibold text-paper">Tecnologias</h2>
+              <h2 className="font-display text-xl font-semibold text-paper">Destaques</h2>
               <div className="mt-5 flex flex-wrap gap-2.5">
-                {project.tech.map((t) => (
+                {project.highlights.map((t) => (
                   <Tag key={t}>{t}</Tag>
                 ))}
               </div>
@@ -130,18 +127,18 @@ export default async function ProjectDetailPage(props: PageProps<"/projetos/[slu
 
           <Reveal delay={160} className="mt-16 rounded-2xl border border-line bg-ink-soft p-7 text-center sm:p-10">
             <p className="font-display text-lg font-semibold text-paper sm:text-xl">
-              Precisa de algo parecido?
+              Quer algo parecido para o seu negócio?
             </p>
             <p className="mx-auto mt-2 max-w-md text-sm text-muted sm:text-base">
-              Me conta o que você precisa e vemos juntos como resolver.
+              Me conta o que você precisa pelo WhatsApp e eu te digo como podemos fazer.
             </p>
-            <Link
-              href="/orcamento"
-              className="mt-5 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-ink transition-colors duration-300 hover:bg-accent-strong"
-            >
-              Solicitar orçamento
-              <ArrowUpRightIcon />
-            </Link>
+            <WhatsAppButton
+              label="Chamar no WhatsApp"
+              message={`Olá, Matheus! Vi o projeto ${project.title} no seu site e quero algo parecido para o meu negócio.`}
+              from={`projeto_cta_${project.slug}`}
+              size="lg"
+              className="mt-5"
+            />
           </Reveal>
 
           <div className="mt-16 border-t border-line pt-10">

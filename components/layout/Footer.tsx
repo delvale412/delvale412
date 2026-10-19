@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "../ui/Container";
-import { GitHubIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from "../ui/icons";
+import { Logo } from "../ui/Logo";
+import { LinkedInIcon, MailIcon, WhatsAppIcon } from "../ui/icons";
 import { social } from "@/data/social";
 
 const navLinks = [
@@ -18,8 +19,8 @@ export function Footer() {
     <footer className="border-t border-line bg-ink-soft/80 backdrop-blur-sm">
       <Container className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-3">
         <div>
-          <p className="font-display text-lg font-semibold text-paper">{social.shortName}</p>
-          <p className="mt-1 text-sm text-muted">{social.role}</p>
+          <Logo />
+          <p className="mt-4 text-sm text-muted">{social.role}</p>
           <p className="mt-1 text-sm text-faint">{social.location}</p>
         </div>
 
@@ -33,13 +34,6 @@ export function Footer() {
               {link.label}
             </Link>
           ))}
-          <a
-            href={social.resumeUrl}
-            download
-            className="text-sm text-muted transition-colors duration-200 hover:text-accent"
-          >
-            Baixar currículo
-          </a>
         </nav>
 
         <div className="flex items-start gap-5 sm:justify-end">
@@ -51,15 +45,6 @@ export function Footer() {
             className="text-muted transition-colors duration-200 hover:text-accent"
           >
             <WhatsAppIcon />
-          </a>
-          <a
-            href={social.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="text-muted transition-colors duration-200 hover:text-accent"
-          >
-            <GitHubIcon />
           </a>
           <a
             href={social.linkedin}
@@ -82,7 +67,7 @@ export function Footer() {
 
       <Container className="border-t border-line py-6">
         <p className="text-xs text-faint">
-          © {year} {social.name}. Todos os direitos reservados.
+          © {year} {social.brand} · {social.name}. Todos os direitos reservados.
         </p>
       </Container>
     </footer>

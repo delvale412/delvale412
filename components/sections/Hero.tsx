@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { Reveal } from "../ui/Reveal";
+import { PortraitStage } from "../ui/PortraitStage";
 import { Button } from "../ui/Button";
-import { GitHubIcon, LinkedInIcon, MailIcon, MapPinIcon, WhatsAppIcon } from "../ui/icons";
+import { WhatsAppButton } from "../ui/WhatsAppButton";
+import { LinkedInIcon, MailIcon, MapPinIcon, WhatsAppIcon } from "../ui/icons";
 import { social } from "@/data/social";
 import { trackEvent } from "@/lib/analytics";
 
@@ -21,37 +22,33 @@ export function Hero() {
 
       <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
-          <div className="order-2 lg:order-1">
+          <div className="order-1">
             <Reveal>
               <p className="font-mono text-xs uppercase tracking-[0.24em] text-accent">
-                Software Developer / Full Stack
+                Sites e sistemas para o seu negócio
               </p>
             </Reveal>
 
             <Reveal delay={80}>
               <h1 className="mt-5 text-balance font-display text-4xl font-semibold leading-[1.08] tracking-tight text-paper sm:text-5xl lg:text-6xl">
-                Transformando ideias em <span className="text-accent">soluções digitais.</span>
+                Seu negócio aparecendo e <span className="text-accent">clientes chamando no WhatsApp.</span>
               </h1>
             </Reveal>
 
             <Reveal delay={160}>
               <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted sm:text-lg">
-                Crio sites, sistemas e aplicações sob medida, cuidando de cada parte do processo,
-                da primeira ideia ao produto pronto e no ar.
+                Sou o Matheus, desenvolvedor há {social.yearsExperience} anos e estudante de Engenharia de Software na UnB. Faço o seu site do começo ao fim e deixo no ar, com prazo combinado e atendimento direto comigo.
               </p>
             </Reveal>
 
             <Reveal delay={240}>
               <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Button
-                  href="/orcamento"
-                  variant="primary"
-                  onClick={() => trackEvent("cta_orcamento_click", { from: "hero" })}
-                >
-                  Solicitar orçamento
-                </Button>
+                <span className="relative inline-flex">
+                  <span aria-hidden="true" className="animate-pulse-ring absolute inset-0 rounded-full bg-[#25d366]/40" />
+                  <WhatsAppButton label="Chamar no WhatsApp" from="hero" size="lg" className="relative" />
+                </span>
                 <Button href="/projetos" variant="secondary">
-                  Conhecer projetos
+                  Ver projetos
                 </Button>
               </div>
             </Reveal>
@@ -74,15 +71,6 @@ export function Hero() {
                     <WhatsAppIcon />
                   </a>
                   <a
-                    href={social.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
-                    className="text-muted transition-colors duration-200 hover:text-accent"
-                  >
-                    <GitHubIcon />
-                  </a>
-                  <a
                     href={social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -103,25 +91,14 @@ export function Hero() {
             </Reveal>
           </div>
 
-          <div className="order-1 lg:order-2">
+          <div className="order-2">
             <Reveal delay={120} className="relative mx-auto max-w-sm lg:max-w-none">
               <div
                 aria-hidden="true"
                 className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-accent/10 blur-3xl"
               />
 
-              <div className="relative aspect-4/5 overflow-hidden rounded-3xl border border-line-strong bg-ink-soft">
-                <Image
-                  src="/images/matheus-photo.jpg"
-                  alt="Matheus do Vale Lameira"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 420px, 340px"
-                  className="object-cover"
-                  style={{ objectPosition: "50% 10%" }}
-                />
-                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-ink/55 via-transparent to-transparent" />
-              </div>
+              <PortraitStage src="/images/matheus-photo.jpg" alt="Matheus do Vale Lameira" />
 
               <span
                 aria-hidden="true"
@@ -136,7 +113,7 @@ export function Hero() {
                 <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
                   Brasília, DF
                 </p>
-                <p className="mt-0.5 text-sm font-medium text-paper">Software Developer</p>
+                <p className="mt-0.5 text-sm font-medium text-paper">{social.yearsExperience} anos de experiência</p>
               </div>
             </Reveal>
           </div>

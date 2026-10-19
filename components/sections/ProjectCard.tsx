@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "../ui/Reveal";
 import { Tag } from "../ui/Tag";
-import { ArrowUpRightIcon, GitHubIcon } from "../ui/icons";
+import { ArrowUpRightIcon } from "../ui/icons";
 import type { Project } from "@/data/projects";
 
 export function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number }) {
@@ -33,7 +33,7 @@ export function ProjectCard({ project, delay = 0 }: { project: Project; delay?: 
           <p className="flex-1 text-sm leading-relaxed text-muted">{project.problem}</p>
 
           <div className="flex flex-wrap gap-2">
-            {project.tech.slice(0, 4).map((t) => (
+            {project.highlights.slice(0, 3).map((t) => (
               <Tag key={t}>{t}</Tag>
             ))}
           </div>
@@ -54,17 +54,7 @@ export function ProjectCard({ project, delay = 0 }: { project: Project; delay?: 
             >
               Estudo de caso
             </Link>
-            {project.githubUrl ? (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors duration-200 hover:text-accent"
-              >
-                <GitHubIcon className="h-3.5 w-3.5" />
-                Código
-              </a>
-            ) : null}
+
           </div>
         </div>
       </article>

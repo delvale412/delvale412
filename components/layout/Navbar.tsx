@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Container } from "../ui/Container";
+import { Logo } from "../ui/Logo";
 import { MenuIcon, CloseIcon } from "../ui/icons";
-import { trackEvent } from "@/lib/analytics";
+import { WhatsAppButton } from "../ui/WhatsAppButton";
 
 const links = [
   { href: "/", label: "Home" },
@@ -43,8 +44,8 @@ export function Navbar() {
       }`}
     >
       <Container className="flex h-16 items-center justify-between sm:h-20">
-        <Link href="/" className="font-display text-lg font-semibold tracking-tight text-paper">
-          Matheus<span className="text-accent">.</span>
+        <Link href="/" aria-label="Vale Desenvolvimentos, página inicial">
+          <Logo />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -62,13 +63,9 @@ export function Navbar() {
           ))}
         </nav>
 
-        <Link
-          href="/orcamento"
-          onClick={() => trackEvent("cta_orcamento_click", { from: "navbar" })}
-          className="hidden rounded-full bg-accent px-5 py-2 text-sm font-medium text-ink transition-colors duration-300 hover:bg-accent-strong md:inline-flex"
-        >
-          Solicitar orçamento
-        </Link>
+        <div className="hidden md:block">
+          <WhatsAppButton label="Chamar no WhatsApp" from="navbar" size="sm" />
+        </div>
 
         <button
           type="button"
@@ -96,16 +93,7 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/orcamento"
-              onClick={() => {
-                trackEvent("cta_orcamento_click", { from: "navbar_mobile" });
-                setOpen(false);
-              }}
-              className="mt-2 rounded-lg bg-accent px-3 py-3 text-center text-base font-medium text-ink"
-            >
-              Solicitar orçamento
-            </Link>
+            <WhatsAppButton label="Chamar no WhatsApp" from="navbar_mobile" className="mt-3 w-full" />
           </nav>
         </div>
       ) : null}
