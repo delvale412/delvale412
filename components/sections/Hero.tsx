@@ -102,24 +102,12 @@ export function Hero() {
                 src="/images/matheus-recorte.png"
                 alt="Matheus do Vale Lameira"
                 badge={
-                  <div className="absolute bottom-0 left-5 z-20 rounded-xl border border-line-strong bg-ink-elevated px-4 py-3 shadow-xl shadow-black/40">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                    Brasília, DF
-                  </p>
-                  <p className="mt-0.5 text-sm font-medium text-paper">{social.yearsExperience} anos de experiência</p>
-                </div>
+                  <div className="rounded-xl border border-line-strong bg-ink-elevated/90 px-4 py-3 shadow-xl shadow-black/40 backdrop-blur-sm">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">Brasília, DF</p>
+                    <p className="mt-0.5 text-sm font-medium text-paper">{social.yearsExperience} anos de experiência</p>
+                  </div>
                 }
               />
-
-              <span
-                aria-hidden="true"
-                className="absolute -top-3 -left-3 h-12 w-12 rounded-tl-3xl border-t-2 border-l-2 border-accent/70"
-              />
-              <span
-                aria-hidden="true"
-                className="absolute -bottom-3 -right-3 h-12 w-12 rounded-br-3xl border-b-2 border-r-2 border-accent/70"
-              />
-
             </Reveal>
           </div>
         </div>

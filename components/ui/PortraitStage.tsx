@@ -84,8 +84,8 @@ export function PortraitStage({
       <span aria-hidden="true" className="absolute top-6 -right-2 h-6 w-6 border-r-2 border-t-2 border-accent/40" />
       <span aria-hidden="true" className="absolute bottom-6 -left-2 h-6 w-6 border-b-2 border-l-2 border-accent/40" />
 
-      {/* Figure: taller than the frame, so it breaks out */}
-      <div className="pointer-events-none absolute inset-x-0 z-10 flex justify-center" style={{ bottom: "-16%" }}>
+      {/* Figure: its base sits on the frame's bottom edge and it is taller than the frame, so only the head breaks out at the top */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-center" style={{ top: "-12%" }}>
         <Image
           src={src}
           alt={alt}
@@ -93,14 +93,11 @@ export function PortraitStage({
           height={height}
           priority
           sizes="(min-width: 1024px) 460px, 360px"
-          className="h-[112%] w-auto max-w-none drop-shadow-[0_30px_40px_rgba(0,0,0,0.55)]"
-          style={{
-            maskImage: "linear-gradient(to bottom, black 78%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, black 78%, transparent 100%)",
-          }}
+          className="h-full w-auto max-w-none"
         />
-        {badge ? <div className="pointer-events-auto">{badge}</div> : null}
       </div>
+
+      {badge ? <div className="absolute bottom-4 left-4 z-20">{badge}</div> : null}
     </div>
   );
 }
