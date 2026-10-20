@@ -98,7 +98,7 @@ export function Hero() {
                 className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-accent/10 blur-3xl"
               />
 
-              <PortraitStage src="/images/matheus-palco.jpg" alt="Matheus do Vale Lameira" />
+              <PortraitStage src="/images/matheus-recorte.png" alt="Matheus do Vale Lameira" />
 
               <span
                 aria-hidden="true"
