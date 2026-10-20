@@ -94,6 +94,10 @@ export function PortraitStage({
           priority
           sizes="(min-width: 1024px) 460px, 360px"
           className="h-[112%] w-auto max-w-none drop-shadow-[0_30px_40px_rgba(0,0,0,0.55)]"
+          style={{
+            maskImage: "linear-gradient(to bottom, black 78%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 78%, transparent 100%)",
+          }}
         />
         {badge ? <div className="pointer-events-auto">{badge}</div> : null}
       </div>
