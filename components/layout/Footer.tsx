@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container } from "../ui/Container";
 import { Logo } from "../ui/Logo";
-import { LinkedInIcon, MailIcon, WhatsAppIcon } from "../ui/icons";
+import { InstagramIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from "../ui/icons";
 import { social } from "@/data/social";
 
 const navLinks = [
@@ -45,6 +45,15 @@ export function Footer() {
             className="text-muted transition-colors duration-200 hover:text-accent"
           >
             <WhatsAppIcon />
+          </a>
+          <a
+            href={social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-muted transition-colors duration-200 hover:text-accent"
+          >
+            <InstagramIcon />
           </a>
           <a
             href={social.linkedin}

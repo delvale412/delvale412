@@ -1,7 +1,7 @@
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 import { WhatsAppButton } from "../ui/WhatsAppButton";
-import { MailIcon, WhatsAppIcon } from "../ui/icons";
+import { InstagramIcon, MailIcon, WhatsAppIcon } from "../ui/icons";
 import { social } from "@/data/social";
 
 export function Contact() {
@@ -50,6 +50,15 @@ export function Contact() {
             >
               <WhatsAppIcon className="h-4 w-4" />
               {social.whatsappDisplay}
+            </a>
+            <a
+              href={social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-muted transition-colors duration-200 hover:text-accent"
+            >
+              <InstagramIcon className="h-4 w-4" />
+              {social.instagramHandle}
             </a>
             <a
               href={`mailto:${social.email}`}

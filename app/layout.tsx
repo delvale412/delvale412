@@ -68,22 +68,26 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: social.name,
-    jobTitle: "Desenvolvedor de sites e sistemas",
+    "@type": "ProfessionalService",
+    name: social.brand,
+    description:
+      "Criação de sites, páginas de vendas, lojas online e sistemas para pequenos negócios, com atendimento direto pelo WhatsApp.",
     url: siteUrl,
-    email: `mailto:${social.email}`,
+    email: social.email,
+    telephone: "+5561999298384",
+    areaServed: "BR",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Brasília",
       addressRegion: "DF",
       addressCountry: "BR",
     },
-    sameAs: [social.github, social.linkedin],
-    alumniOf: {
-      "@type": "CollegeOrUniversity",
-      name: "Universidade de Brasília",
+    founder: {
+      "@type": "Person",
+      name: social.name,
+      jobTitle: "Desenvolvedor de sites e sistemas",
     },
+    sameAs: [social.instagram, social.linkedin],
   };
 
   return (

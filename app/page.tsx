@@ -7,6 +7,7 @@ import { Leverage } from "@/components/sections/Leverage";
 import { WhoIAm } from "@/components/sections/WhoIAm";
 import { Process } from "@/components/sections/Process";
 import { Contact } from "@/components/sections/Contact";
+import { Faq } from "@/components/sections/Faq";
 import { projects } from "@/data/projects";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <WhoIAm />
       {featured ? <ProjectSpotlight project={featured} /> : null}
       <FeaturedProjectsTeaser />
+      <Faq />
       <Contact />
     </>
   );

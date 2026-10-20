@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { LinkedInIcon, MailIcon, WhatsAppIcon, ArrowUpRightIcon } from "@/components/ui/icons";
+import { InstagramIcon, LinkedInIcon, MailIcon, WhatsAppIcon, ArrowUpRightIcon } from "@/components/ui/icons";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { QuickContactForm } from "@/components/forms/QuickContactForm";
 import { social } from "@/data/social";
@@ -26,6 +26,12 @@ const channels = [
     label: "E-mail",
     value: social.email,
     href: `mailto:${social.email}`,
+  },
+  {
+    icon: InstagramIcon,
+    label: "Instagram",
+    value: social.instagramHandle,
+    href: social.instagram,
   },
   {
     icon: LinkedInIcon,

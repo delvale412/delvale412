@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServicesList } from "@/components/sections/ServicesList";
 import { Packages } from "@/components/sections/Packages";
+import { Faq } from "@/components/sections/Faq";
 
 export const metadata: Metadata = {
   title: "Serviços",
@@ -29,6 +30,7 @@ export default function ServicosPage() {
         </Container>
       </section>
       <Packages />
+      <Faq />
     </>
   );
 }

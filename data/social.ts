@@ -6,6 +6,8 @@ export const social = {
   yearsExperience: 8,
   location: "Brasília, DF",
   email: "mvlameira@gmail.com",
+  instagram: "https://www.instagram.com/valedesenvolvimento/",
+  instagramHandle: "@valedesenvolvimento",
   github: "https://github.com/delvale412",
   githubHandle: "@delvale412",
   linkedin: "https://www.linkedin.com/in/matheus-do-vale-lameira/",
