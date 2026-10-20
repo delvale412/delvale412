@@ -7,7 +7,7 @@ import { Education } from "@/components/sections/Education";
 export const metadata: Metadata = {
   title: "Sobre",
   description:
-    "Quem é o Matheus: 8 anos na área de desenvolvimento, formação em Engenharia de Software na UnB e experiência em sistemas da Polícia Federal e da ANVISA.",
+    "Quem é o Matheus: 8 anos na área de desenvolvimento e experiência em sistemas da Polícia Federal e da ANVISA.",
   alternates: { canonical: "/sobre" },
 };
 

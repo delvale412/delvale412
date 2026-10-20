@@ -2,13 +2,12 @@ import Link from "next/link";
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 import { ArrowUpRightIcon } from "../ui/icons";
-import { education } from "@/data/education";
 import { social } from "@/data/social";
 
 const facts = [
   { value: `${social.yearsExperience} anos`, label: "trabalhando com desenvolvimento" },
   { value: "Governo federal", label: "sistemas feitos para a Polícia Federal e a ANVISA" },
-  { value: "UnB", label: `cursando ${education.degree.replace("Bacharelado em ", "")} (${education.status})` },
+  { value: "Brasília", label: "atendimento direto, do primeiro contato ao site no ar" },
 ];
 
 export function WhoIAm() {
@@ -22,8 +21,7 @@ export function WhoIAm() {
               {social.yearsExperience} anos fazendo sites e sistemas funcionarem.
             </h2>
             <p className="mt-5 max-w-xl text-balance text-base leading-relaxed text-muted sm:text-lg">
-              Sou o Matheus, de Brasília. Atuo há {social.yearsExperience} anos na área de desenvolvimento e estudo
-              Engenharia de Software na Universidade de Brasília. Você fala direto comigo, do primeiro
+              Sou o Matheus, de Brasília. Atuo há {social.yearsExperience} anos na área de desenvolvimento. Você fala direto comigo, do primeiro
               contato até o site no ar, sem intermediário.
             </p>
             <Link

@@ -31,13 +31,13 @@ export function Hero() {
 
             <Reveal delay={80}>
               <h1 className="mt-5 text-balance font-display text-4xl font-semibold leading-[1.08] tracking-tight text-paper sm:text-5xl lg:text-6xl">
-                Seu negócio aparecendo e <span className="text-accent">clientes chamando no WhatsApp.</span>
+                Sua ideia ganha forma. <span className="text-accent">Seu negócio ganha o mundo digital.</span>
               </h1>
             </Reveal>
 
             <Reveal delay={160}>
               <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted sm:text-lg">
-                Sou o Matheus, desenvolvedor há {social.yearsExperience} anos e estudante de Engenharia de Software na UnB. Faço o seu site do começo ao fim e deixo no ar, com prazo combinado e atendimento direto comigo.
+                Sou o Matheus, desenvolvedor há {social.yearsExperience} anos. Faço o seu site do começo ao fim e deixo no ar, com prazo combinado e atendimento direto comigo.
               </p>
             </Reveal>
 

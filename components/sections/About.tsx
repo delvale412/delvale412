@@ -36,8 +36,7 @@ export function About() {
         <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <Reveal delay={80} className="flex flex-col gap-6 text-balance text-base leading-relaxed text-muted sm:text-lg">
             <p>
-              Sou o Matheus, de Brasília. Atuo há {social.yearsExperience} anos na área de desenvolvimento e estudo
-              Engenharia de Software na Universidade de Brasília (UnB), hoje no 8º semestre.
+              Sou o Matheus, de Brasília. Atuo há {social.yearsExperience} anos na área de desenvolvimento de sites e sistemas.
             </p>
             <p>
               Antes de começar qualquer projeto, procuro entender o que você precisa resolver, quem
