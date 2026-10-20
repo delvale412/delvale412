@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { LogoMark } from "./Logo";
 
@@ -12,11 +13,14 @@ export function PortraitStage({
   alt,
   width = 901,
   height = 1600,
+  badge,
 }: {
   src: string;
   alt: string;
   width?: number;
   height?: number;
+  /** Info card aligned to the bottom edge of the figure. */
+  badge?: ReactNode;
 }) {
   return (
     <div className="relative mt-20 aspect-4/5 lg:mt-24">
@@ -91,6 +95,7 @@ export function PortraitStage({
           sizes="(min-width: 1024px) 460px, 360px"
           className="h-[112%] w-auto max-w-none drop-shadow-[0_30px_40px_rgba(0,0,0,0.55)]"
         />
+        {badge ? <div className="pointer-events-auto">{badge}</div> : null}
       </div>
     </div>
   );

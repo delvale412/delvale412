@@ -98,7 +98,18 @@ export function Hero() {
                 className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-accent/10 blur-3xl"
               />
 
-              <PortraitStage src="/images/matheus-recorte.png" alt="Matheus do Vale Lameira" />
+              <PortraitStage
+                src="/images/matheus-recorte.png"
+                alt="Matheus do Vale Lameira"
+                badge={
+                  <div className="absolute bottom-0 left-5 z-20 rounded-xl border border-line-strong bg-ink-elevated px-4 py-3 shadow-xl shadow-black/40">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+                    Brasília, DF
+                  </p>
+                  <p className="mt-0.5 text-sm font-medium text-paper">{social.yearsExperience} anos de experiência</p>
+                </div>
+                }
+              />
 
               <span
                 aria-hidden="true"
@@ -109,12 +120,6 @@ export function Hero() {
                 className="absolute -bottom-3 -right-3 h-12 w-12 rounded-br-3xl border-b-2 border-r-2 border-accent/70"
               />
 
-              <div className="absolute -bottom-5 left-5 z-20 rounded-xl border border-line-strong bg-ink-elevated px-4 py-3 shadow-xl shadow-black/40">
-                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                  Brasília, DF
-                </p>
-                <p className="mt-0.5 text-sm font-medium text-paper">{social.yearsExperience} anos de experiência</p>
-              </div>
             </Reveal>
           </div>
         </div>
