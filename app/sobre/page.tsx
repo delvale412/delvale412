@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
-import { Education } from "@/components/sections/Education";
 
 export const metadata: Metadata = {
   title: "Sobre",
@@ -17,7 +16,6 @@ export default function SobrePage() {
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Sobre" }]} />
       <About />
       <Experience />
-      <Education />
     </>
   );
 }

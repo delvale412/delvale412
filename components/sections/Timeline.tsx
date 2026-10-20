@@ -3,13 +3,12 @@ import { Reveal } from "../ui/Reveal";
 const milestones = [
   { year: "2024", title: "Polícia Federal", detail: "Desenvolvimento de sistemas" },
   { year: "2025", title: "ANVISA", detail: "Desenvolvimento de sistemas" },
-  { year: "2027", title: "Conclusão prevista", detail: "Engenharia de Software (UnB)" },
 ];
 
 export function Timeline() {
   return (
     <div className="mt-16">
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-6">
         {milestones.map((m, i) => (
           <Reveal key={m.year} delay={i * 100}>
             <div className="relative pl-6 sm:pl-0">
