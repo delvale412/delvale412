@@ -16,12 +16,12 @@ export default function Home() {
     <>
       <Hero />
       <BenefitsMarquee />
-      {featured ? <ProjectSpotlight project={featured} /> : null}
       <Leverage />
-      <FeaturedProjectsTeaser />
       <Packages />
-      <WhoIAm />
       <Process />
+      <WhoIAm />
+      {featured ? <ProjectSpotlight project={featured} /> : null}
+      <FeaturedProjectsTeaser />
       <Contact />
     </>
   );
